@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 from decouple import config
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -117,6 +118,9 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, '/static') ]
+    
+    #os.path.join(BASE_DIR, 'C:/Users/Usuario/Documents/NuevoRepo/triaje-ula/static') ]
+    # --- Me funciono con ruta completa en windows ---
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -124,3 +128,6 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.CustomUser'
+
+
+#Agrego las clinicas necesarias y un cath xq tienen que ser unicas el name

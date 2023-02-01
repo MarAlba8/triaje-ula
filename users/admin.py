@@ -23,7 +23,7 @@ class CustomUserAdmin(UserAdmin):
     model = CustomUser
 
     list_display = ('username', 'email',
-                    'is_staff', 'is_superuser')
+                    'is_staff', 'is_superuser', 'clinic', 'metadata')
     list_filter = (('is_staff', custom_titled_filter('Administradores y Estudiantes')),
                    ('is_superuser', custom_titled_filter('Administradores')),
                    ('clinic', custom_titled_filter('Pacientes por Clinica'))

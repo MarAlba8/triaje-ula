@@ -8,15 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <title>Triaje Online Odonlogia</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/Icon_logo.PNG" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
         type="text/css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
 
@@ -69,7 +70,7 @@
             overflow-x: auto;
             text-align: center;
             white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
+            -webkit-overflow-scrolling: touch; 
         }
 
 
@@ -89,6 +90,15 @@
         }
 
 
+        .carousel-caption{
+            background-color: rgba(3, 3, 3, 0.479);
+            border-radius: 15px;
+            font-weight: 600;
+            border: #1f00ce;
+            color: #ffffff
+        }
+
+
 
 
 
@@ -103,23 +113,6 @@
 
 <body id="page-top">
     <!-- Navigation-->
-    <!--  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="#page-top">TRIAJE ODONTOLOGIA ULA</a>
-            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
-                data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#portfolio">Login</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
@@ -135,145 +128,61 @@
         </div>
     </nav>
 
-    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
         </div>
+        
+
+
+        
+        <!-- The slideshow/carousel -->
         <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="10000">
-            <img src="{% static 'assets/img/triaje.png' %}"  width="100%" height="80%" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
+          <div class="carousel-item active" data-bs-interval="3000">
+            <img src="{% static 'assets/img/imagen_1.png' %}" alt="Los Angeles" class="d-block" style="width:100%; height: 100%;">
+            <div class="carousel-caption">
+              <h1>Bienvenido al Sistema</h1>
+              <h1>de Triaje Online</h1> </br>
+              <p>Un sistema creado para optimizar el control y asignacion de citas para los usuarios de nuestra facultad de odonlogia de la Universidad de los Andes</p>
             </div>
           </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img src="..." class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
+          <div class="carousel-item" data-bs-interval="6000">
+            <img src="{% static 'assets/img/imagen_2.jpg' %}" alt="" class="d-block" style="width:100%; height: 100%;">
+            <div class="carousel-caption">
+              <h2>Pasos a Seguir:</h2>
+              <div style="text-align:center;"> </br>
+              <p>1. Click en la seccion de abajo para comenzar </p>
+              <p>2. Introduzca sus datos personales</p>
+              <p>3. Responda las preguntas referente al Covid-19 segun su caso</p>
+              <p>4. Responda las preguntas medicas de triaje segun caso</p>
+              <p>5. Envie sus respuestas y este atento a la de su confirmacion para cita medica por los medios de contacto ingresados</p>
             </div>
+            </div> 
           </div>
           <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
+            <img src="{% static 'assets/img/imagen_3.png' %}" alt="" class="d-block" style="width:100%; height: 100%;">
+            <div class="carousel-caption">
+              <h3>Atento a su informacion de contacto para la confirmacion de su cita</h3>
+            </div>  
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+        
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
         </button>
       </div>
 
 
-
- <!--    <section>
-        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
-                    aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns=""
-                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <rect width="100%" height="100%" />
-                        <image xlink:href="assets/img/triaje.png" width="100%" height="100%" />
-                    </svg>
-                    <div class="container">
-                        <div class="carousel-caption text-start">
-                            <h1>Example headline.</h1>
-                            <p>Some representative placeholder content for the first slide of the carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <rect width="100%" height="100%" fill="#777" /></svg>
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>Another example headline.</h1>
-                            <p>Some representative placeholder content for the second slide of the carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <rect width="100%" height="100%" fill="#777" /></svg>
-                    <div class="container">
-                        <div class="carousel-caption text-end">
-                            <h1>One more for good measure.</h1>
-                            <p>Some representative placeholder content for the third slide of this carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-    </section> -->
-
-
-    <!-- Masthead-->
-
-
-
-
-<!--
-
-
-    <header class="masthead bg-primary text-white text-center">
-        <div class="container d-flex align-items-center flex-column">
-            <img class="masthead-avatar mb-5" src="assets/img/descargaLogo.png" alt="..." />
-            <h1 class="masthead-heading text-uppercase mb-0">Bienvenidos al Triaje Online de la Facultad de Odonlogia
-                Ula</h1>
-                </br>
-
-            <p class="masthead-subheading font-weight-light mb-0"> Este es un sistema de triaje que permite Lorem ipsum
-                dolor sit amet, consectetur adipiscing elit. Quisque et auctor urna. Nulla tincidunt, diam in consequat
-                condimentum, nulla nisl bibendum nulla, quis sagittis urna odio non ante. Morbi augue risus, auctor nec
-                lobortis eu, pulvinar pellentesque nunc. Duis ac ornare nisi. Etiam posuere, lacus sit amet laoreet
-                accumsan, sem sem dapibus magna, suscipit pellentesque arcu metus vel lectus. Donec ante nunc, pulvinar
-                at pulvinar at, ultrices at elit. Cras.</p>
-            <p class="masthead-subheading font-weight-light mb-0"> 1- LLena su informacion Personal.</p>
-            <p class="masthead-subheading font-weight-light mb-0"> 2- Responda las preguntas de triaje segun su caso./p>
-            <p class="masthead-subheading font-weight-light mb-0"> 3- Espere respuesta para su cita.</p>
-
-        </div>
-    </header> -->
-
-    <!-- About Section-->
-
-
-    <!-- *************************************** -->
-
-
-
     <!-- Contact Section-->
-    <section class="page-section" id="contact">
+    <section class="page-section" id="contact"> </br></br>
         <div class="container justify-content-center">
             <!-- Contact Section Heading-->
 
@@ -282,26 +191,34 @@
             </h2>
             </br></br>
 
+  
+
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+
+            <div class="gap-2 col-6 justify-content: center; mx-auto" id="div_BotonEmpezar" >
+                <button type="button" class="btn btn-dark btn-lg" onclick="MostrarTriaje()"> <i class="bi bi-hand-index"></i> COMENZAR </button>
+            </div>
+            </h2>
+
 
             <!-- Contact Section Form-->
 
-            <div class="container " style="width: 70%;"></br>
+            <div class="container " class="align-center" style=" margin-left: 20%;"   ></br>
 
-                <div class="align-items-center " style="width: 70%;">
-                    <form id="regiration_form" novalidate action="" method="post">{% csrf_token %}
-
-                        <div id="div_InformacionPersonal">
+                <div class="align-items-center mx-auto" id="div_Triaje" style="display:none;"   >
+                    <form id="regiration_form" novalidate action="" method="post"> {% csrf_token %}
+                        <div id="div_InformacionPersonal" class="align-items-center mx-auto">
                             <fieldset>
-                                <h2>Paso 1: Informacion Personal</h2>
+                                <h2 class="form-group col-9 ">Paso 1: Informacion Personal</h2>
 
-                                <div class="form-group col-12">
+                                <div class="form-group col-6">
                                     <label style="padding-top: 15px;" for="Nombre">
                                         <h5>Nombres</h5>
                                     </label>
-                                    <input autocomplete="off" type="email" class="form-control" id="Nombre"
+                                    <input autocomplete="off" type="email" class="form-control " id="Nombre"
                                         name="Nombre" placeholder="Nombre">
                                 </div>
-                                <div class="form-group col-12">
+                                <div class="form-group col-6">
                                     <label style="padding-top: 15px;" for="Apellido">
                                         <h5>Apellidos</h5>
                                     </label>
@@ -311,55 +228,62 @@
                                 <label style="padding-top: 15px;" for="Cedula">
                                     <h5>Cedula</h5>
                                 </label>
-                                <div class="form-group input-group col-12">
+                                <div class="form-group input-group col-6">
                                     <!-- <label style="padding-top: 15px;" for="Cedula">
                                         <h5>Cedula</h5>
                                     </label> -->
-                                    <div class="form-group  col-2">
+                                    <div class="form-group  col-1" style="margin-right: 20px;">
                                         <select class="form-select col-1" id="TipoCedula">
                                             <option value="V" selected>V</option>
                                             <option value="E">E</option>
                                         </select>
                                     </div>
-                                    <div class="form-group  col-10">
+                                    <div class="form-group  col-5">
                                         <input autocomplete="off" type="number" class="form-control" id="Cedula"
                                             name="Cedula" placeholder="">
                                     </div>
                                 </div>
-                                <div class="form-group col-12">
+                                <div class="form-group col-6">
                                     <label style="padding-top: 15px;" for="Telefono">
                                         <h5>Telefono</h5>
                                     </label>
                                     <input autocomplete="off" type="number" step="0" class="form-control" id="Telefono"
                                         name="Telefono" placeholder="04140000000">
                                 </div>
+                                <div class="form-group col-6">
+                                    <label style="padding-top: 15px;" for="Email">
+                                        <h5>Email</h5>
+                                    </label>
+                                    <input autocomplete="off" type="email" step="0" class="form-control" id="Email"
+                                        name="Email" placeholder="email@gmail.com">
+                                </div>
                                 </br>
-                                <div class="d-md-flex justify-content-md-end">
+                                <div class="col-6 d-md-flex justify-content-md-end">
                                 <input autocomplete="off" style="padding-top: 5px;" type="button"
                                     onclick="FunctionInforPersonal()" class="btn btn-primary" value="Siguiente" />
-                                </div>
+                                </div>  
                             </fieldset>
                         </div>
                         <div id="div_InformacionCovid" style="display: none;">
                             <fieldset>
 
                                 <h2> Paso 2: Informacion Covid</h2>
-                                <div class="form-group col-12">
+                                <div class="form-group col-6">
                                     <label style="padding-top: 15px;" for="P_covid_1">
                                         <h5>¿Sufrio Covid-19 recientemente?</h5>
                                     </label>
                                     <input autocomplete="off" type="" class="form-control" id="P_covid_1"
                                         name="P_covid_1" placeholder="No, Si">
                                 </div>
-                                <div class="form-group col-12">
+                                <div class="form-group col-6">
                                     <label style="padding-top: 15px;" for="P_covid_2">
                                         <h5>¿Presenta algun sintoma Covid?</h5>
                                     </label>
                                     <input autocomplete="off" type="" class="form-control" id="P_covid_2"
                                         name="P_covid_2" placeholder="Tos, fiebre, malestar, ninguna">
                                 </div> </br>
-
-                                <div class="col-7 d-flex justify-content-between align-items-center">
+                               
+                                <div class="col-6 d-flex justify-content-between align-items-center">
                                     <input style="padding-top: 5px;" type="button" onclick="FunctionCancelar_1()"
                                         class="btn btn-primary" value="Atras" />
 
@@ -367,10 +291,10 @@
                                             <input style="padding-top: 5px;" type="button" onclick="FunctionInforCovid()"
                                                 class="btn btn-primary" value="Siguiente" />
                                         </div>
-
+                                   
                                 </div>
-
-
+   
+                               
                             </fieldset>
                         </div>
 
@@ -378,7 +302,7 @@
                             <fieldset>
 
                                 <h2> Paso 3: Informacion Consulta</h2>
-                                <div class="form-group col-12" id="Select_1">
+                                <div class="form-group col-6" id="Select_1">
                                     <label style="padding-top: 15px;" for="email">
                                         <h5>¿Siente dolor?</h5>
                                     </label> </br>
@@ -398,11 +322,11 @@
                                 <!-- *********************** RAMA DEL SI *****************************  -->
                                 <div id="Select_1_SI" style="display: none;">
                                     <!--                                     <div class="form-group col-7">
-
+                                        
                                         <input  type="email" class="form-control" id="P2" name="P2" placeholder="">
                                     </div> -->
 
-                                    <div class=" form-group col-12 ">
+                                    <div class=" form-group col-6 ">
                                         <label style="padding-top: 15px;" for="P2">
                                             <h5>¿Cuando Comenzo el dolor? Describa como y donde le afecta</h5>
                                         </label>
@@ -412,7 +336,7 @@
                                     </div>
 
 
-                                    <div id="Select_1_SI_Options" class="form-group col-12">
+                                    <div id="Select_1_SI_Options" class="form-group col-6">
                                         <label style="padding-top: 15px;" for="">
                                             <h5>Localizacion: El dolor esta asociacio a..</h5>
                                         </label> </br>
@@ -466,7 +390,7 @@
 
                                         <div id="Dientes_1" style="display: none;">
 
-                                            <div class="form-group col-10">
+                                            <div class="form-group col-14">
                                                 <label style="padding-top: 15px;">
                                                     <h5>¿Esta en la Ultima Muela? </h5>
                                                 </label> </br>
@@ -485,7 +409,7 @@
 
                                             <div id="Dientes_2" style="display: none;">
 
-                                                <div class="form-group col-12">
+                                                <div class="form-group col-14">
                                                     <label style="padding-top: 15px;">
                                                         <h5>¿Esta cubierta por encia? </h5>
                                                     </label> </br>
@@ -508,7 +432,7 @@
 
                                             <div id="Dientes_3" style="display: none;">
 
-                                                <div class="form-group col-12">
+                                                <div class="form-group col-14">
                                                     <label style="padding-top: 15px;">
                                                         <h5>¿El dolor es intenso y/o constante? </h5>
                                                     </label> </br>
@@ -528,7 +452,7 @@
 
                                                 <div id="Dientes_4" style="display: none;">
 
-                                                    <div class="form-group col-12">
+                                                    <div class="form-group col-14">
                                                         <label style="padding-top: 15px;">
                                                             <h5>¿Se agudiza con frio, calor o dulce?</h5>
                                                         </label> </br>
@@ -555,7 +479,7 @@
                                         <!-- RAMA ENCIAS -->
                                         <div id="Encias_1" style="display: none;">
 
-                                            <div class="form-group col-12">
+                                            <div class="form-group col-14">
                                                 <label style="padding-top: 15px;">
                                                     <h5>¿Hay una capa blanca sobre la lesion?</h5>
                                                 </label> </br>
@@ -575,7 +499,7 @@
 
 
                                         <!-- RAMA TRAUMATISMO -->
-                                        <div id="Traumatismo_1" class="form-group col-12" style="display: none;">
+                                        <div id="Traumatismo_1" class="form-group col-14" style="display: none;">
 
                                             <div class="form-group">
                                                 <label style="padding-top: 15px;">
@@ -598,7 +522,7 @@
 
                                             <div id="Traumatismo_2" style="display: none;">
 
-                                                <div class="form-group col-5">
+                                                <div class="form-group col-14">
                                                     <label style="padding-top: 15px;">
                                                         <h5>¿Hubo Sangrado?</h5>
                                                     </label> </br>
@@ -619,7 +543,7 @@
 
                                                 <div id="Traumatismo_3" style="display: none;">
 
-                                                    <div class="form-group col-12">
+                                                    <div class="form-group col-14">
                                                         <label style="padding-top: 15px;">
                                                             <h5>¿Perdida de Estructura Dental?</h5>
                                                         </label> </br>
@@ -650,7 +574,7 @@
                                         <!-- RAMA INFECCION -->
                                         <div id="Infeccion_1" style="display: none;">
 
-                                            <div class="form-group col-12">
+                                            <div class="form-group col-14">
                                                 <label style="padding-top: 15px;">
                                                     <h5>¿Dificultad para abrir la boca o tragar?</h5>
                                                 </label> </br>
@@ -680,7 +604,7 @@
                                 <!-- Pregunta Select1_No_A -->
                                 <div id="Select_1_NO_A" style="display: none;">
 
-                                    <div class="form-group col-12">
+                                    <div class="form-group col-6">
                                         <label style="padding-top: 15px;">
                                             <h5>¿Presenta Alguna lesion en tejido blando?</h5>
                                         </label> </br>
@@ -699,7 +623,7 @@
                                     <!-- Pregunta Select1_No_B -->
                                     <div id="Select_1_NO_B" style="display: none;">
 
-                                        <div class="form-group col-12">
+                                        <div class="form-group col-6">
                                             <label style="padding-top: 15px;">
                                                 <h5>¿El motivo de la consulta está asociado al uso de prótesis dental
                                                     removible??</h5>
@@ -719,7 +643,7 @@
                                         <!-- Pregunta Select1_No_C -->
                                         <div id="Select_1_NO_C" style="display: none;">
 
-                                            <div class="form-group col-12">
+                                            <div class="form-group col-6">
                                                 <label style="padding-top: 15px;">
                                                     <h5>¿Requiere una Protesis dental?</h5>
                                                 </label> </br>
@@ -740,7 +664,7 @@
                                             <!-- Pregunta Select1_No_D -->
                                             <div id="Select_1_NO_D" style="display: none;">
 
-                                                <div class="form-group col-12">
+                                                <div class="form-group col-6">
                                                     <label style="padding-top: 15px;">
                                                         <h5>¿Necesita una extracción dental?</h5>
                                                     </label> </br>
@@ -761,7 +685,7 @@
                                                 <!-- Pregunta Select1_No_E -->
                                                 <div id="Select_1_NO_E" style="display: none;">
 
-                                                    <div class="form-group col-12">
+                                                    <div class="form-group col-6">
                                                         <label style="padding-top: 15px;">
                                                             <h5>¿Necesita realizar un proceso quirurgico?</h5>
                                                         </label> </br>
@@ -784,7 +708,7 @@
                                                     <!-- Pregunta Select1_No_F -->
                                                     <div id="Select_1_NO_F" style="display: none;">
 
-                                                        <div class="form-group col-12">
+                                                        <div class="form-group col-6">
                                                             <label style="padding-top: 15px;">
                                                                 <h5>¿El motivo de la consulta está asociado a caries
                                                                     dental?</h5>
@@ -808,7 +732,7 @@
                                                         <!-- Pregunta Select1_No_G -->
                                                         <div id="Select_1_NO_G" style="display: none;">
 
-                                                            <div class="form-group col-12">
+                                                            <div class="form-group col-6">
                                                                 <label style="padding-top: 15px;">
                                                                     <h5>¿Necesita cambiar o reponer una restauración o
                                                                         calza?</h5>
@@ -832,7 +756,7 @@
                                                             <!-- Pregunta Select1_No_H -->
                                                             <div id="Select_1_NO_H" style="display: none;">
 
-                                                                <div class="form-group col-12">
+                                                                <div class="form-group col-6">
                                                                     <label style="padding-top: 15px;">
                                                                         <h5>¿Presenta sangrado al cepillarse?
                                                                         </h5>
@@ -858,7 +782,7 @@
                                                                 <!-- Pregunta Select1_No_I -->
                                                                 <div id="Select_1_NO_I" style="display: none;">
 
-                                                                    <div class="form-group col-12">
+                                                                    <div class="form-group col-6">
                                                                         <label style="padding-top: 15px;">
                                                                             <h5>¿Requiere una limpieza dental? </h5>
                                                                         </label> </br>
@@ -883,7 +807,7 @@
                                                                     <!-- Pregunta Select1_No_J -->
                                                                     <div id="Select_1_NO_J" style="display: none;">
 
-                                                                        <div class="form-group col-12">
+                                                                        <div class="form-group col-6">
                                                                             <label style="padding-top: 15px;">
                                                                                 <h5>¿Necesita realizar un procedimiento
                                                                                     estético? </h5>
@@ -912,7 +836,7 @@
                                                                         <!-- Pregunta Select1_No_K -->
                                                                         <div id="Select_1_NO_K" style="display: none;">
 
-                                                                            <div class="form-group col-12">
+                                                                            <div class="form-group col-6">
                                                                                 <label style="padding-top: 15px;">
                                                                                     <h5>¿Necesita realizar una revisión
                                                                                         y consulta para referir? </h5>
@@ -969,7 +893,7 @@
 
 
                                 </br>
-                                <div class="col-7 d-flex justify-content-between align-items-center">
+                                <div class="col-6 d-flex justify-content-between align-items-center">
                                     <input style="padding-top: 5px;" type="button" onclick="FunctionCancelar_2()"
                                         class="btn btn-primary" value="Atras" />
                                     <input style="padding-top: 5px;" type="button" onclick="ResetRespuestas()"
@@ -978,32 +902,61 @@
 
                                 </br>
 
-<!--                                 <div id="Boton_Enviar" class="col-1  align-items-center" style="display: none;">
-                                    <input style="padding-top: 5px;" type="button" onclick="Enviar()"
-                                        class="next btn btn-info btn-lg" value="Enviar.." />
-                                </div> -->
-
 
                                 <div id="Boton_Enviar" class="col-10  align-items-center" style="display: none;" >
-                                    <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        Enviar Triaje..
+                                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Enviar Triaje!
                                       </button>
                                 </div>
-
-
+                                
+                                  
                                   <!-- Modal -->
                                   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                       <div class="modal-content">
                                         <div class="modal-header">
-                                          <h5 class="modal-title" id="exampleModalLabel">Se eviara el triaje con la informacion y respuestas seleccionadas, Esta seguro?
+                                          <h5 class="modal-title" id="exampleModalLabel">Se enviara el triaje con la informacion y respuestas seleccionadas </br> ¿Confirmar Accion?
+                                        </h5> 
+                                        
+                                        </h5>
+                                          <button type="button" id="closeModal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                         
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                          <button type="button" id="boton1" class="btn btn-success" onclick="Enviar()">Enviar</button>
+                                          <button class="btn btn-success" id="boton2" type="button"style="display: none;" disabled>
+                                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                            Enviar
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+
+                                  <!-- SuccessModal -->
+                                  <div class="modal fade" id="SuccessModal" tabindex="-1" aria-labelledby="SuccessModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="SuccessModalLabel"> Se registro correctamente su triaje! <i class="bi bi-check-circle-fill"></i>
                                         </h5>
                                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
+                                      </div>
+                                    </div>
+                                  </div>
 
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                          <button type="button" class="btn btn-success" onclick="Enviar()">Enviar</button>
+                                   <!-- ErrorModal -->
+                                   <div class="modal fade" id="ErrorModal" tabindex="-1" aria-labelledby="ErrorModalLabel" aria-hidden="true">    
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="ErrorModalLabel"> ERROR: </br>  no se registro el triaje correctamente, vuelva a intentarlo <i class="bi bi-x-circle-fill"></i>
+                                            </h5>
+                    
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                       </div>
                                     </div>
@@ -1019,7 +972,7 @@
 
             </div>
 
-        </div>
+        </div>    </br></br></br></br>
     </section>
 
 
@@ -1039,278 +992,59 @@
             <div class="row">
                 <!-- Footer Location-->
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <h4 class="text-uppercase mb-4">Nuestra Ubicacion</h4>
                     <p class="lead mb-0">
-                        2215 John Daniel Drive
+                        Rectorado de la Univerdad de los Andes,
+                        Centro de la Ciudad
                         <br />
-                        Clark, MO 65243
+                        Calle 24 entre Avenidas 2 y 3
                     </p>
                 </div>
                 <!-- Footer Social Icons-->
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Around the Web</h4>
+                    <h4 class="text-uppercase mb-4">Redes de la Facultad</h4>
                     <a class="btn btn-outline-light btn-social mx-1" href="#!"><i
                             class="fab fa-fw fa-facebook-f"></i></a>
                     <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
                     <a class="btn btn-outline-light btn-social mx-1" href="#!"><i
                             class="fab fa-fw fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
                 </div>
                 <!-- Footer About Text-->
-                <div class="col-lg-4">
+                <!-- <div class="col-lg-4">
                     <h4 class="text-uppercase mb-4">About Freelancer</h4>
                     <p class="lead mb-0">
                         Freelance is a free to use, MIT licensed Bootstrap theme created by
                         <a href="http://startbootstrap.com">Start Bootstrap</a>
                         .
                     </p>
-                </div>
+                </div> -->
             </div>
         </div>
     </footer>
     <!-- Copyright Section-->
     <div class="copyright py-4 text-center text-white">
-        <div class="container"><small>Copyright &copy; Your Website 2022</small></div>
+        <div class="container"><small>Copyright &copy; www.ula.com.ve 2023</small></div>
     </div>
     <!-- Portfolio Modals-->
     <!-- Portfolio Modal 1-->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1"
-        aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
-                        aria-label="Close"></button></div>
-                <div class="modal-body text-center pb-5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title-->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
-                                <!-- Icon Divider-->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image-->
-                                <img class="img-fluid rounded mb-5" src="{% static 'assets/img/portfolio/cabin.png' %}" alt="..." />
-                                <!-- Portfolio Modal - Text-->
-                                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                    assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
-                                    velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
-                                </p>
-                                <button class="btn btn-primary" data-bs-dismiss="modal">
-                                    <i class="fas fa-xmark fa-fw"></i>
-                                    Close Window
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio Modal 2-->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2"
-        aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
-                        aria-label="Close"></button></div>
-                <div class="modal-body text-center pb-5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title-->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
-                                <!-- Icon Divider-->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image-->
-                                <img class="img-fluid rounded mb-5" src="{% static 'assets/img/portfolio/cake.png' %}" alt="..." />
-                                <!-- Portfolio Modal - Text-->
-                                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                    assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
-                                    velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
-                                </p>
-                                <button class="btn btn-primary" data-bs-dismiss="modal">
-                                    <i class="fas fa-xmark fa-fw"></i>
-                                    Close Window
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio Modal 3-->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3"
-        aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
-                        aria-label="Close"></button></div>
-                <div class="modal-body text-center pb-5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title-->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
-                                <!-- Icon Divider-->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image-->
-                                <img class="img-fluid rounded mb-5" src="{% static 'assets/img/portfolio/circus.png' %}" alt="..." />
-                                <!-- Portfolio Modal - Text-->
-                                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                    assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
-                                    velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
-                                </p>
-                                <button class="btn btn-primary" data-bs-dismiss="modal">
-                                    <i class="fas fa-xmark fa-fw"></i>
-                                    Close Window
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio Modal 4-->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4"
-        aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
-                        aria-label="Close"></button></div>
-                <div class="modal-body text-center pb-5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title-->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
-                                <!-- Icon Divider-->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image-->
-                                <img class="img-fluid rounded mb-5" src="{% static 'assets/img/portfolio/game.png' %}" alt="..." />
-                                <!-- Portfolio Modal - Text-->
-                                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                    assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
-                                    velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
-                                </p>
-                                <button class="btn btn-primary" data-bs-dismiss="modal">
-                                    <i class="fas fa-xmark fa-fw"></i>
-                                    Close Window
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio Modal 5-->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5"
-        aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
-                        aria-label="Close"></button></div>
-                <div class="modal-body text-center pb-5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title-->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
-                                <!-- Icon Divider-->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image-->
-                                <img class="img-fluid rounded mb-5" src="{% static 'assets/img/portfolio/safe.png' %}" alt="..." />
-                                <!-- Portfolio Modal - Text-->
-                                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                    assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
-                                    velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
-                                </p>
-                                <button class="btn btn-primary" data-bs-dismiss="modal">
-                                    <i class="fas fa-xmark fa-fw"></i>
-                                    Close Window
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Portfolio Modal 6-->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6"
-        aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
-                        aria-label="Close"></button></div>
-                <div class="modal-body text-center pb-5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title-->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
-                                <!-- Icon Divider-->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image-->
-                                <img class="img-fluid rounded mb-5" src="{% static 'assets/img/portfolio/submarine.png' %}"
-                                    alt="..." />
-                                <!-- Portfolio Modal - Text-->
-                                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                    assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
-                                    velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
-                                </p>
-                                <button class="btn btn-primary" data-bs-dismiss="modal">
-                                    <i class="fas fa-xmark fa-fw"></i>
-                                    Close Window
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
+    <!-- <script src="js/scripts.js"></script> -->
     <script src="{% static 'js/scripts.js' %}"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 </body>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 <script type="text/javascript">
 
     class Pila {
@@ -1359,6 +1093,16 @@
     var Preguntas_Triaje = [];
 
 
+    function MostrarTriaje() {
+
+        document.getElementById("div_Triaje").style.display = "";
+        //document.getElementById("div_BotonEmpezar2").style.display = "";
+
+        document.getElementById("div_BotonEmpezar").style.display = "none";
+
+
+    }
+
     function ValidacionInfoCovid() {
 
         document.getElementById("P_covid_1").classList.remove('is-invalid')
@@ -1401,16 +1145,22 @@
 
         // x[i].classList.remove('is-invalid')
 
+        var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+
+
         document.getElementById("Nombre").classList.remove('is-invalid')
         document.getElementById("Apellido").classList.remove('is-invalid')
         document.getElementById("Cedula").classList.remove('is-invalid')
         document.getElementById("Telefono").classList.remove('is-invalid')
+        document.getElementById("Email").classList.remove('is-invalid')
+
 
 
         var Nombre = document.getElementById("Nombre").value;
         var Apellido = document.getElementById("Apellido").value;
         var Cedula = document.getElementById("Cedula").value;
         var Telefono = document.getElementById("Telefono").value;
+        var Email = document.getElementById('Email').value;
 
         console.log(Nombre)
         console.log(Cedula)
@@ -1446,6 +1196,13 @@
             console.log(Telefono)
             return false;
 
+        } else if ( !(validEmail.test(Email))) {
+
+            document.getElementById("Email").classList.add('is-invalid')
+            alert("Error Campo Email: Debe introducir un email con formato valido")
+            console.log(Email)
+            return false;
+
         } else {
 
             //console.log(Telefono[0]+Telefono[1])
@@ -1468,17 +1225,23 @@
             document.getElementById("Apellido").classList.remove('is-invalid')
             document.getElementById("Cedula").classList.remove('is-invalid')
             document.getElementById("Telefono").classList.remove('is-invalid')
+            document.getElementById("Email").classList.remove('is-invalid')
+
 
 
 
             document.getElementById("div_InformacionPersonal").style.display = "none";
             document.getElementById("div_InformacionCovid").style.display = "";
 
+            var targetElm = document.querySelector('#Titulo')  // reference to scroll target
+            targetElm.scrollIntoView();
+
             InformacionPersonal.Nombre = document.getElementById("Nombre").value;
 
             InformacionPersonal.Apellido = document.getElementById("Apellido").value;
             InformacionPersonal.Cedula = document.getElementById("TipoCedula").value + document.getElementById("Cedula").value;
             InformacionPersonal.Telefono = document.getElementById("Telefono").value;
+            InformacionPersonal.Email = document.getElementById("Email").value;
 
             Data.inf_Personal = InformacionPersonal;
 
@@ -1497,6 +1260,9 @@
 
             document.getElementById("div_InformacionCovid").style.display = "none";
             document.getElementById("div_InformacionConsulta").style.display = "";
+
+            var targetElm = document.querySelector('#Titulo')  // reference to scroll target
+            targetElm.scrollIntoView();
 
 
             InformacionCovid.P_covid_1 = document.getElementById("P_covid_1").value;
@@ -1533,20 +1299,70 @@
 
     function Enviar() {
 
+       /*  console.log(Data)
+
+        alert("Clinica Sugerida Algoritmo: "+ Data.ClinicaSugerida + "\n\n" + "(Realizar Envio al backend y espera de respuesta.)"); */
+
+        document.getElementById("boton1").style.display = "none";
+        document.getElementById("boton2").style.display = "";
+
+        
+
+
         console.log(Data)
 
         /*alert("revisar consola web, DOM \n" + JSON.stringify(Data));*/
         $.ajax({
             type: 'POST',
             url: "/triage/save",
+            dataType: 'json',
             data : {
-                'request_data': Data,
+                'request_data': JSON.stringify(Data),
                 'csrfmiddlewaretoken': '{{ csrf_token }}',
-            },
+            } ,
             success : function(json) {
-                $("#request-access").hide();
+                
                 console.log("requested access complete");
+
+                document.getElementById('closeModal').click();
+
+                var SuccessModal = new bootstrap.Modal(document.getElementById('SuccessModal'), {
+                keyboard: false
+                })
+
+                
+                SuccessModal.show()
+                document.getElementById("boton2").style.display = "none";
+                document.getElementById("boton1").style.display = "";
+
+            },
+
+            error : function(xhr, status, error) {
+
+
+                if(xhr.responseText == "Error_email")
+                {
+                    document.getElementById('ErrorModalLabel').innerHTML='ERROR <i class="bi bi-x-circle-fill"></i>: </br>  Correo actualmente en uso por otro paciente';
+
+                }
+                else{
+                    document.getElementById('ErrorModalLabel').innerHTML='ERROR <i class="bi bi-x-circle-fill"></i>: </br>  no se registro el triaje correctamente, vuelva a intentarlo';
+
+                }
+
+                var ErrorModal = new bootstrap.Modal(document.getElementById('ErrorModal'), {
+                keyboard: false
+                })
+
+                document.getElementById('closeModal').click();
+                ErrorModal.show()
+                document.getElementById("boton2").style.display = "none";
+                document.getElementById("boton1").style.display = "";
             }
+
+
+
+
         })
     }
 
@@ -1641,48 +1457,6 @@
 
     }
 
-
-
-    /*     function Pila_divs(Div_Actual) {
-
-            var i = 0;
-            console.log("pertenece")
-            console.log(pila.Pertenece(Div_Actual));
-
-            //if( (pila.size() !=0) || ( pila.Pertenece(Div_Actual) == true) ){
-            if ((pila.Pertenece(Div_Actual) == true)) {
-
-
-
-
-                while (pila.size() != 0) {
-                    i++;
-                    console.log("entre: " + i)
-                    //aux = pila.pop();
-                    aux = pila.Ver_ultimo();
-                    //console.log("AUX")
-                    console.log(aux)
-                    if (Div_Actual == aux) {
-
-                        console.log("son iguales: " + aux)
-
-                        break;
-                    } else {
-
-                        console.log("NO iguales: " + aux)
-                        document.getElementById(`${aux}`).style.display = "none";
-                        pila.pop();
-
-                    }
-                }
-            }
-            else {
-
-                pila.push(Div_Actual);
-
-
-            }
-        } */
 
 
     var select_1 = document.getElementById('Select_1');
@@ -1817,7 +1591,7 @@
                     pila_RadioButtons.push("Options_Select1_SI");
 
                     Data.PreguntasTriaje = Preguntas_Triaje;
-                    Data.ClinicaSugerida = "Clinica integral del Adulto";
+                    Data.ClinicaSugerida = "Integral del Adulto";
                     document.getElementById("Boton_Enviar").style.display = "";
 
 
@@ -2276,7 +2050,7 @@
 
 
                 Data.PreguntasTriaje = Preguntas_Triaje;
-                Data.ClinicaSugerida = "Clínica Integral del Adulto";
+                Data.ClinicaSugerida = "Integral del Adulto";
 
 
                 document.getElementById("Boton_Enviar").style.display = "";
@@ -2312,7 +2086,7 @@
                 });
 
                 Data.PreguntasTriaje = Preguntas_Triaje;
-                Data.ClinicaSugerida = "Clínica Integral del Adulto";
+                Data.ClinicaSugerida = "Integral del Adulto";
 
 
                 Desactivar_Opciones("Options_Select1_NO_C");
