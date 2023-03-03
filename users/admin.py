@@ -1,11 +1,27 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
+from history.models import History
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 from .models import CustomUser
 
 
 from django.contrib import admin
+
+@admin.action(description='Tomar Paciente')
+def take_patient(modeladmin, request, queryset):
+    for patient in queryset:
+        history = History()
+        history.patient_name = f"{patient.first_name} {patient.last_name}"
+        history.patient_email = patient.email
+        history.patient_phone = patient.phone
+        history.patient_metadata = patient.metadata
+        history.clinic = patient.clinic
+        history.student = request.user
+        history.save()
+
+        CustomUser.objects.filter(id=patient.id).delete()
+
 
 def custom_titled_filter(title):
     class Wrapper(admin.FieldListFilter):
@@ -23,7 +39,7 @@ class CustomUserAdmin(UserAdmin):
     model = CustomUser
 
     list_display = ('username', 'email',
-                    'is_staff', 'is_superuser', 'clinic', 'metadata')
+                    'is_staff', 'is_superuser', 'clinic')
     list_filter = (('is_staff', custom_titled_filter('Administradores y Estudiantes')),
                    ('is_superuser', custom_titled_filter('Administradores')),
                    ('clinic', custom_titled_filter('Pacientes por Clinica'))
@@ -42,6 +58,7 @@ class CustomUserAdmin(UserAdmin):
     )
     search_fields = ('email', 'clinic')
     ordering = ('email',)
+    actions = [take_patient, ]
 
 
 admin.site.register(CustomUser, CustomUserAdmin)

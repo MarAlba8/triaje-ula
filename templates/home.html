@@ -1089,7 +1089,7 @@
     var pila = new Pila();
     var Data = new Object();
     var InformacionPersonal = new Object();
-    var InformacionCovid = new Object();
+    var InformacionCovid = [];
     var Preguntas_Triaje = [];
 
 
@@ -1265,8 +1265,18 @@
             targetElm.scrollIntoView();
 
 
-            InformacionCovid.P_covid_1 = document.getElementById("P_covid_1").value;
-            InformacionCovid.P_covid_2 = document.getElementById("P_covid_2").value;
+            //InformacionCovid.P_covid_1 = document.getElementById("P_covid_1").value;
+            //InformacionCovid.P_covid_2 = document.getElementById("P_covid_2").value;
+
+            InformacionCovid.push({
+                    Pregunta: "¿Sufrio Covid-19 recientemente?",
+                    Respuesta: document.getElementById("P_covid_1").value,
+                })
+
+            InformacionCovid.push({
+                    Pregunta: "¿Presenta algun sintoma Covid?",
+                    Respuesta: document.getElementById("P_covid_2").value,
+                })
 
             Data.inf_Covid = InformacionCovid;
 
@@ -1338,17 +1348,21 @@
             },
 
             error : function(xhr, status, error) {
+                console.log(xhr)
+                console.log(status)
+                console.log(error)
 
+                document.getElementById('ErrorModalLabel').innerHTML='ERROR <i class="bi bi-x-circle-fill"></i>: </br>' +  xhr.responseText;
 
-                if(xhr.responseText == "Error_email")
-                {
-                    document.getElementById('ErrorModalLabel').innerHTML='ERROR <i class="bi bi-x-circle-fill"></i>: </br>  Correo actualmente en uso por otro paciente';
+                //if(xhr.responseText == "Error_email")
+                //{
+                //    document.getElementById('ErrorModalLabel').innerHTML='ERROR <i class="bi bi-x-circle-fill"></i>: </br>  Correo actualmente en uso por otro paciente';
+                //
+                //}
+                //else{
+                //    document.getElementById('ErrorModalLabel').innerHTML='ERROR <i class="bi bi-x-circle-fill"></i>: </br>  xhr.responseText';
 
-                }
-                else{
-                    document.getElementById('ErrorModalLabel').innerHTML='ERROR <i class="bi bi-x-circle-fill"></i>: </br>  no se registro el triaje correctamente, vuelva a intentarlo';
-
-                }
+               // }
 
                 var ErrorModal = new bootstrap.Modal(document.getElementById('ErrorModal'), {
                 keyboard: false

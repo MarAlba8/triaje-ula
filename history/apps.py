@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class ClinicsConfig(AppConfig):
+class HistoryConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'clinics'
-    verbose_name = 'Clínicas'
+    name = 'history'
+    verbose_name = 'Historial'

@@ -4,14 +4,12 @@ from django.db import models
 # Create your models here.
 
 class Clinic(models.Model):
-    name = models.CharField(max_length=50,blank=False, unique=True)
-
-    # def __str__(self):
-    #     """String for representing the Model object."""
-    #     return self.name
+    name = models.CharField(verbose_name="Nombre", max_length=50,blank=False, unique=True)
 
     class Meta:
         app_label = 'clinics'
+        verbose_name = 'Clínica'
+        verbose_name_plural = 'Clínicas'
 
     @classmethod
     def create(cls, name):
@@ -24,7 +22,7 @@ class Clinic(models.Model):
 try:
 
     a=Clinic.objects.all()
-    if(a):
+    if(len(a)>6):
         print("### YA HAY clinicas registradas ####")
     
     else:

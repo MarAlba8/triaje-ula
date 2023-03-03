@@ -34,8 +34,9 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # Local apps
-    'users',
     'clinics',
+    'history',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -129,5 +130,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
-
-#Agrego las clinicas necesarias y un cath xq tienen que ser unicas el name
+JAZZMIN_SETTINGS = {
+    "site_brand": "Triage Administration",
+    "site_logo": "/img/admin-logo.png",
+    "site_logo_classes": "img-circle",
+    "order_with_respect_to": [
+        "users",
+        "clinics",
+        "history"
+    ],
+    "icons": {
+        "users.User": "fas fa-user",
+        "clinics.Clinic": "fas fa-columns",
+        "history.History": "fas fa-file",
+    },
+    "default_icon_parents": "fas fa-chevron-circle-right",
+    "default_icon_children": "fas fa-circle",
+}

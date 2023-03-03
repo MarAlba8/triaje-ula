@@ -1,5 +1,6 @@
 import json
 
+from django.db import IntegrityError
 from django.http import HttpResponseRedirect, JsonResponse, HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render
 from django.urls import reverse
@@ -15,41 +16,31 @@ def login_view(request):
     return HttpResponseRedirect(reverse('admin:index'))
 
 def save_patient_data_view(request):
-    
-    print("DJANGO VIEW")
-    Data= json.loads(request.POST.get('request_data'))
-
-    print("**************")
-    print(Data)
+    data = json.loads(request.POST.get('request_data'))
     
     try:
+        patient = CustomUser()
+        patient.is_superuser = False
+        patient.is_staff = False
+        patient.username = data['inf_Personal']['Nombre']
+        patient.metadata = {"PreguntasCovid": data['inf_Covid'], "PreguntasTriaje": data['PreguntasTriaje']}
+        patient.email = data['inf_Personal']['Email']
+        patient.first_name = data['inf_Personal']['Nombre']
+        patient.last_name = data['inf_Personal']['Apellido']
+        patient.phone = data['inf_Personal']['Telefono']
+        patient.national_id = data['inf_Personal']['Cedula']
 
-        Paciente = CustomUser()
-        Paciente.is_superuser = False
-        Paciente.is_staff = False
-        Paciente.username = Data['inf_Personal']['Nombre']
-        Paciente.metadata = {"PreguntasCovid": Data['inf_Covid'], "PreguntasTriaje": Data['PreguntasTriaje']}
-        Paciente.email = Data['inf_Personal']['Email']
-        Paciente.first_name = Data['inf_Personal']['Nombre']
-        Paciente.last_name = Data['inf_Personal']['Apellido']
-        Paciente.phone = Data['inf_Personal']['Telefono']
-        clinic=Clinic.objects.filter(name= Data['ClinicaSugerida'])
-        
-        print("hola")
-        print(clinic)
-        #print(clinic[0])
-        Paciente.clinic = clinic[0]
-        Paciente.save()
-        print("sss")
-        return HttpResponse(json.dumps(Data), content_type="application/json")
-       
+        clinic=Clinic.objects.filter(name=data['ClinicaSugerida']).first()
+        patient.clinic = clinic
+        patient.save()
 
-    except Exception as e: 
-        print("err")
-        print(e)
-        print(type(str(e)))
+        return HttpResponse(json.dumps(data), content_type="application/json")
 
-        if (str(e) == "UNIQUE constraint failed: users_customuser.email"):
-            return HttpResponseBadRequest("Error_email")
-        else:
-            return HttpResponseBadRequest("Error")
+    except IntegrityError as exc:
+        # if (str(e) == "UNIQUE constraint failed: users_customuser.email"):
+        #     return HttpResponseBadRequest("Error_email")
+        # else:
+        error_message = str(exc).split(".")[1]
+        return HttpResponseBadRequest(f"Alguno de los datos ya se registró anteriormente: {error_message}")
+    except Exception:
+        return HttpResponseBadRequest(f"Error al procesar los datos")
