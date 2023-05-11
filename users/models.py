@@ -1,10 +1,12 @@
+import json
+
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils.translation import gettext as _
 
 from clinics.models import Clinic
+from utils.encoders import PrettyJSONEncoder
 from .managers import CustomUserManager
-
 
 
 class CustomUser(AbstractUser):
@@ -15,7 +17,7 @@ class CustomUser(AbstractUser):
     email = models.EmailField(max_length=50,verbose_name="Correo", blank=False, unique=True)
     phone = models.CharField(max_length=50, verbose_name="Teléfono", blank=True)
     occupation = models.CharField(max_length=50, verbose_name="Ocupación", blank=True)
-    metadata = models.JSONField(verbose_name="Preguntas Triaje", default=dict)
+    metadata = models.JSONField(verbose_name="Preguntas Triaje", default=dict, encoder=PrettyJSONEncoder)
     is_staff = models.BooleanField(
         verbose_name="Usuario interno",
         default=False,

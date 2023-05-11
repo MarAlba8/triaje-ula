@@ -1,4 +1,3 @@
-from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
 from history.models import History
@@ -7,6 +6,8 @@ from .models import CustomUser
 
 
 from django.contrib import admin
+
+
 
 @admin.action(description='Tomar Paciente')
 def take_patient(modeladmin, request, queryset):
@@ -21,6 +22,7 @@ def take_patient(modeladmin, request, queryset):
         history.save()
 
         CustomUser.objects.filter(id=patient.id).delete()
+
 
 
 def custom_titled_filter(title):
@@ -46,9 +48,10 @@ class CustomUserAdmin(UserAdmin):
                    )
     fieldsets = (
         (None, {'fields': ('username', 'email', 'password', 'clinic')}),
-        ('Permissions', {'fields': ('is_staff', 'is_active',
+        ('Permisos', {'fields': ('is_staff', 'is_active',
          'is_superuser', 'groups', 'user_permissions')}),
-        ('Dates', {'fields': ('last_login', 'date_joined')})
+        ('Fechas', {'fields': ('last_login', 'date_joined')}),
+        ('Preguntas', {'fields': ('metadata',)})
     )
     add_fieldsets = (
         (None, {
@@ -59,6 +62,8 @@ class CustomUserAdmin(UserAdmin):
     search_fields = ('email', 'clinic')
     ordering = ('email',)
     actions = [take_patient, ]
+
+    readonly_fields = ["metadata"]
 
 
 admin.site.register(CustomUser, CustomUserAdmin)

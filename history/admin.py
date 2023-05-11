@@ -16,14 +16,15 @@ def custom_titled_filter(title):
 class HistoryAdmin(admin.ModelAdmin):
     model = History
 
-    list_display = ('clinic','patient_name','student')
+    list_display = ('clinic', 'patient_name', 'student')
 
     list_filter = (('clinic', custom_titled_filter('Pacientes por Clinica')),)
 
     fieldsets = (
-        ("Paciente", {'fields': ('patient_name', 'patient_email', 'patient_phone', 'patient_metadata')}),
+        ("Paciente", {'fields': ('patient_name', 'patient_email', 'patient_phone')}),
         ('Clínica', {'fields': ('clinic',)}),
-        ('Estudiante', {'fields': ('student',)})
+        ('Estudiante', {'fields': ('student',)}),
+        ('Preguntas', {'fields': ('patient_metadata',)}),
     )
 
     def has_add_permission(self, request, obj=None):

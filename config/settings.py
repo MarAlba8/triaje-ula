@@ -1,3 +1,4 @@
+import environ
 import os
 from pathlib import Path
 from decouple import config
@@ -147,3 +148,6 @@ JAZZMIN_SETTINGS = {
     "default_icon_parents": "fas fa-chevron-circle-right",
     "default_icon_children": "fas fa-circle",
 }
+
+env = environ.Env(DJANGO_SECRET_KEY=(str, ""))
+env.read_env()
