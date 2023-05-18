@@ -106,13 +106,15 @@ class CustomUserAdmin(UserAdmin):
                    ('is_superuser', custom_titled_filter('Administradores')),
                    ('clinic', custom_titled_filter('Pacientes por Clinica'))
                    )
+
     fieldsets = (
-        (None, {'fields': ('username', 'email', 'password', 'clinic')}),
+        (None, {'fields': ('username', 'email', 'password', 'clinic', 'national_id')}),
         ('Permisos', {'fields': ('is_staff', 'is_active',
          'is_superuser', 'groups', 'user_permissions')}),
         ('Fechas', {'fields': ('last_login', 'date_joined')}),
         ('Preguntas', {'fields': ('metadata',)})
     )
+
     add_fieldsets = (
         (None, {
             'classes': ('wide',),

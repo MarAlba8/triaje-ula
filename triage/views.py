@@ -30,7 +30,7 @@ def save_patient_data_view(request):
         patient.phone = data['inf_Personal']['Telefono']
         patient.national_id = data['inf_Personal']['Cedula']
 
-        clinic=Clinic.objects.filter(name=data['ClinicaSugerida']).first()
+        clinic = Clinic.objects.filter(name=data['ClinicaSugerida']).first()
         patient.clinic = clinic
         patient.save()
 
@@ -41,6 +41,10 @@ def save_patient_data_view(request):
         #     return HttpResponseBadRequest("Error_email")
         # else:
         error_message = str(exc).split(".")[1]
+
+        if error_message == "national_id":
+            error_message = "Cédula"
+
         return HttpResponseBadRequest(f"Alguno de los datos ya se registró anteriormente: {error_message}")
     except Exception:
         return HttpResponseBadRequest(f"Error al procesar los datos")

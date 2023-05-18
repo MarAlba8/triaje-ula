@@ -12,7 +12,7 @@ from .managers import CustomUserManager
 class CustomUser(AbstractUser):
     email = models.EmailField(verbose_name="Correo", unique=True)
     clinic = models.ForeignKey(Clinic, verbose_name="Clínica", on_delete=models.SET_NULL, null=True, blank=True)
-    national_id = models.CharField(max_length=50, verbose_name="Cédula", blank=False)
+    national_id = models.CharField(max_length=50, verbose_name="Cédula", blank=False, unique=True)
     consultation_reason = models.CharField(max_length=100, verbose_name="Motivo de Consulta", blank=True)
     email = models.EmailField(max_length=50,verbose_name="Correo", blank=False, unique=True)
     phone = models.CharField(max_length=50, verbose_name="Teléfono", blank=True)
