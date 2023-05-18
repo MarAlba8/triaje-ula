@@ -20,8 +20,11 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/home.css' %}" rel="stylesheet" />
 
-    <style>
+
+
+    <!-- <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
@@ -102,7 +105,7 @@
 
 
 
-    </style>
+    </style> -->
 
 
 
@@ -203,13 +206,14 @@
 
             <!-- Contact Section Form-->
 
-            <div class="container " class="align-center" style=" margin-left: 20%;"   ></br>
+            <div class="container " class="align-center" style=" margin-left: 15%;"   ></br>
 
                 <div class="align-items-center mx-auto" id="div_Triaje" style="display:none;"   >
                     <form id="regiration_form" novalidate action="" method="post"> {% csrf_token %}
                         <div id="div_InformacionPersonal" class="align-items-center mx-auto">
                             <fieldset>
-                                <h2 class="form-group col-9 ">Paso 1: Informacion Personal</h2>
+                                <h2 class="form-group col-9 fs-1">Paso 1: Informacion Personal</h2>
+                                <p> <i class="bi bi-info-circle"></i> Asegurese que la informacion ingresada esa actual</p>
 
                                 <div class="form-group col-6">
                                     <label style="padding-top: 15px;" for="Nombre">
@@ -264,24 +268,133 @@
                                 </div>  
                             </fieldset>
                         </div>
+
                         <div id="div_InformacionCovid" style="display: none;">
                             <fieldset>
 
-                                <h2> Paso 2: Informacion Covid</h2>
-                                <div class="form-group col-6">
-                                    <label style="padding-top: 15px;" for="P_covid_1">
-                                        <h5>¿Sufrio Covid-19 recientemente?</h5>
+                                <h2 class="form-group col-9 fs-1"> Paso 2: Informacion Covid</h2> </br>
+
+                                <!-- ################################### -->
+
+                                <div class="form-group col-9">
+                                    <label style="padding-top: 15px;" for="">
+                                        <h5>¿Ha sido diagnosticado con COVID-19 en los últimos 15 días?</h5>
                                     </label>
-                                    <input autocomplete="off" type="" class="form-control" id="P_covid_1"
-                                        name="P_covid_1" placeholder="No, Si">
-                                </div>
-                                <div class="form-group col-6">
-                                    <label style="padding-top: 15px;" for="P_covid_2">
-                                        <h5>¿Presenta algun sintoma Covid?</h5>
+                                    <div class="form-group col-4">
+                                        <select class="form-select" id="Select_Covid_1" aria-label="Default select example">
+                                            <option selected value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div> </br>     
+                                
+                                <div class="form-group col-9">
+                                    <label style="padding-top: 15px;" for="">
+                                        <h5>¿Has estado con alguien que ha tenido COVID-19 en los ultimos dias?</h5>
                                     </label>
-                                    <input autocomplete="off" type="" class="form-control" id="P_covid_2"
-                                        name="P_covid_2" placeholder="Tos, fiebre, malestar, ninguna">
+                                    <div class="form-group col-4">
+                                        <select class="form-select" id="Select_Covid_2" aria-label="Default select example">
+                                            <option selected value="No">No</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No recuerdo">No recuerdo</option>
+                                        </select>
+                                    </div>
                                 </div> </br>
+
+                               
+                                <label class="form-group col-9" style="padding-top: 15px;" for="">
+                                    <h5>¿Ha experimentado cualquiera de los siguientes síntomas?</h5>
+                                </label>
+                                
+
+                                <div>
+                                    <div class=" form-check-inline col-5">
+                                        <label style="padding-top: 15px;" for="">
+                                            <h6>Fiebre o escalofríos</h6>
+                                        </label>
+                                    </div>
+                                    <div class=" form-check-inline">
+                                        <select class="form-select col-1" id="Select_Covid_3A" aria-label="Default select example">
+                                            <option selected value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col- 7">
+                                    <div class=" form-check-inline col-5">
+                                        <label style="padding-top: 15px;" for="">
+                                            <h6>Nauseas o vomito</h6>
+                                        </label>
+                                    </div>
+                                    <div class=" form-check-inline">
+                                        <select class="form-select col-1" id="Select_Covid_3B" aria-label="Default select example">
+                                            <option selected value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class=" form-check-inline col-5">
+                                        <label style="padding-top: 15px;" for="">
+                                            <h6>dificultad de respirar / Fatiga</h6>
+                                        </label>
+                                    </div>
+                                    <div class=" form-check-inline">
+                                        <select class="form-select col-1" id="Select_Covid_3C" aria-label="Default select example">
+                                            <option selected value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div>
+                                    <div class=" form-check-inline col-5">
+                                        <label style="padding-top: 15px;" for="">
+                                            <h6>Dolor de garganta</h6>
+                                        </label>
+                                    </div>
+                                    <div class=" form-check-inline">
+                                        <select class="form-select col-1" id="Select_Covid_3D" aria-label="Default select example">
+                                            <option selected value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class=" form-check-inline col-5">
+                                        <label style="padding-top: 15px;" for="">
+                                            <h6>Tos</h6>
+                                        </label>
+                                    </div>
+                                    <div class=" form-check-inline">
+                                        <select class="form-select col-1" id="Select_Covid_3E" aria-label="Default select example">
+                                            <option selected value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class=" form-check-inline col-5">
+                                        <label style="padding-top: 15px;" for="">
+                                            <h6>Perdida del gusto/olfato</h6>
+                                        </label>
+                                    </div>
+                                    <div class=" form-check-inline">
+                                        <select class="form-select col-1" id="Select_Covid_3F" aria-label="Default select example">
+                                            <option selected value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>  </br>
+
+                                <!-- ################################### -->
+
+
                                
                                 <div class="col-6 d-flex justify-content-between align-items-center">
                                     <input style="padding-top: 5px;" type="button" onclick="FunctionCancelar_1()"
@@ -301,7 +414,7 @@
                         <div id="div_InformacionConsulta" style="display: none;">
                             <fieldset>
 
-                                <h2> Paso 3: Informacion Consulta</h2>
+                                <h2 class="form-group col-9 fs-1"> Paso 3: Informacion Consulta</h2>
                                 <div class="form-group col-6" id="Select_1">
                                     <label style="padding-top: 15px;" for="email">
                                         <h5>¿Siente dolor?</h5>
@@ -317,23 +430,72 @@
                                         <label class="form-check-label" for="inlineRadio2">NO</label>
                                     </div>
 
-
                                 </div>
+
+                                <!-- ############# NUEVAS PREGUNTAS ################################### -->
+
+                                <div class="form-group col-6" style="display: none;" id="Select_1_P1">
+                                    <label style="padding-top: 15px;" for="email">
+                                        <h5>¿Cuando empezo el dolor?</h5>
+                                    </label> </br>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input Options_Select_1_P1" type="radio"
+                                            name="Options_Select_1_P1" id="" value="1-3 Dias" />
+                                        <label class="form-check-label" for="inlineRadio1">1-3 Dias</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input Options_Select_1_P1" type="radio"
+                                            name="Options_Select_1_P1" id="" value="3-7 Dias" />
+                                        <label class="form-check-label" for="inlineRadio2">3-7 Dias</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input Options_Select_1_P1" type="radio"
+                                            name="Options_Select_1_P1" id="" value="Mas de 1 semana" />
+                                        <label class="form-check-label" for="inlineRadio2">Mas de 1 semana</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input Options_Select_1_P1" type="radio"
+                                            name="Options_Select_1_P1" id="" value="Mas de 1 Mes" />
+                                        <label class="form-check-label" for="inlineRadio2">Mas de 1 Mes</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-6" style="display: none;" id="Select_1_P2">
+                                    <label style="padding-top: 15px;" for="email">
+                                        <h5>¿Cual ha sido la intencidad del dolor?</h5>
+                                    </label> </br>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input Options_Select_1_P2" type="radio"
+                                            name="Options_Select_1_P2" id="" value="Poca" />
+                                        <label class="form-check-label" for="inlineRadio1">Poca</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input Options_Select_1_P2" type="radio"
+                                            name="Options_Select_1_P2" id="inlineRadio2" value="Intermedia" />
+                                        <label class="form-check-label" for="inlineRadio2">Intermedia</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input Options_Select_1_P2" type="radio"
+                                            name="Options_Select_1_P2" id="inlineRadio2" value="Fuerte" />
+                                        <label class="form-check-label" for="inlineRadio2">Fuerte</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input Options_Select_1_P2" type="radio"
+                                            name="Options_Select_1_P2" id="inlineRadio2" value="Muy Fuerte" />
+                                        <label class="form-check-label" for="inlineRadio2">Muy Fuerte</label>
+                                    </div>
+                                </div>
+
+
+                                <!-- ############# FIN NUEVAS PREGUNTAS ################################### -->
+
+
+
+
+
+
                                 <!-- *********************** RAMA DEL SI *****************************  -->
                                 <div id="Select_1_SI" style="display: none;">
-                                    <!--                                     <div class="form-group col-7">
-                                        
-                                        <input  type="email" class="form-control" id="P2" name="P2" placeholder="">
-                                    </div> -->
-
-                                    <div class=" form-group col-6 ">
-                                        <label style="padding-top: 15px;" for="P2">
-                                            <h5>¿Cuando Comenzo el dolor? Describa como y donde le afecta</h5>
-                                        </label>
-
-                                        <textarea id="Pregunta_1" class="form-control TextArea_question"
-                                            aria-label="With textarea" required></textarea>
-                                    </div>
 
 
                                     <div id="Select_1_SI_Options" class="form-group col-6">
@@ -1040,7 +1202,8 @@
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script src="{% static 'js/cdn/jquery.min.js' %}"></script>
 
 </body>
 
@@ -1083,7 +1246,7 @@
 
     var pila_div = new Pila();
     var pila_RadioButtons = new Pila();
-    var pila_textArea = new Pila();
+    //var pila_textArea = new Pila();
 
 
     var pila = new Pila();
@@ -1102,45 +1265,6 @@
 
 
     }
-
-    function ValidacionInfoCovid() {
-
-        document.getElementById("P_covid_1").classList.remove('is-invalid')
-        document.getElementById("P_covid_2").classList.remove('is-invalid')
-
-        P_covid_1 = document.getElementById("P_covid_1").value;
-        P_covid_2 = document.getElementById("P_covid_2").value;
-
-        console.log("entre covid")
-        console.log(P_covid_1)
-        console.log(P_covid_2.length)
-
-
-        if (P_covid_1 == "") {
-
-
-            document.getElementById("P_covid_1").classList.add('is-invalid')
-            alert("Complete correctamente los campos")
-            return false;
-
-        } else if (P_covid_2.length == 0) {
-
-
-            document.getElementById("P_covid_2").classList.add('is-invalid')
-            alert("Complete correctamente los campos")
-            return false;
-
-        } else {
-
-            //console.log(Telefono[0]+Telefono[1])
-            console.log("FINISH")
-            return true;
-
-        }
-
-
-    }
-
     function ValidacionInforPersonal() {
 
         // x[i].classList.remove('is-invalid')
@@ -1162,8 +1286,6 @@
         var Telefono = document.getElementById("Telefono").value;
         var Email = document.getElementById('Email').value;
 
-        console.log(Nombre)
-        console.log(Cedula)
 
         if (Nombre.length < 3) {
 
@@ -1183,8 +1305,7 @@
 
             document.getElementById("Cedula").classList.add('is-invalid')
             alert("El Campo 'Cedula' debe tener los formatos VXXXXXXXX o EXXXXXXXX")
-            console.log(Cedula)
-            console.log(Cedula[0])
+    
 
             return false;
 
@@ -1193,19 +1314,16 @@
 
             document.getElementById("Telefono").classList.add('is-invalid')
             alert("Error Campo Telefono: Debe contener el formato 041XXXXXXXX")
-            console.log(Telefono)
             return false;
 
         } else if ( !(validEmail.test(Email))) {
 
             document.getElementById("Email").classList.add('is-invalid')
             alert("Error Campo Email: Debe introducir un email con formato valido")
-            console.log(Email)
             return false;
 
         } else {
 
-            //console.log(Telefono[0]+Telefono[1])
             console.log("FINISH")
             return true;
 
@@ -1218,7 +1336,7 @@
 
     function FunctionInforPersonal() {
 
-        console.log("asds")
+    
         if (ValidacionInforPersonal() == true) {
 
             document.getElementById("Nombre").classList.remove('is-invalid')
@@ -1253,10 +1371,6 @@
 
     function FunctionInforCovid() {
 
-        if (ValidacionInfoCovid() == true) {
-
-            document.getElementById("P_covid_1").classList.remove('is-invalid')
-            document.getElementById("P_covid_2").classList.remove('is-invalid')
 
             document.getElementById("div_InformacionCovid").style.display = "none";
             document.getElementById("div_InformacionConsulta").style.display = "";
@@ -1265,24 +1379,53 @@
             targetElm.scrollIntoView();
 
 
-            //InformacionCovid.P_covid_1 = document.getElementById("P_covid_1").value;
-            //InformacionCovid.P_covid_2 = document.getElementById("P_covid_2").value;
-
             InformacionCovid.push({
-                    Pregunta: "¿Sufrio Covid-19 recientemente?",
-                    Respuesta: document.getElementById("P_covid_1").value,
+                    Pregunta: "¿Ha sido diagnosticado con COVID-19 en los últimos 15 días?",
+                    Respuesta: document.getElementById("Select_Covid_1").value,
                 })
 
             InformacionCovid.push({
-                    Pregunta: "¿Presenta algun sintoma Covid?",
-                    Respuesta: document.getElementById("P_covid_2").value,
-                })
+                Pregunta: "¿Has estado con alguien que ha tenido COVID-19 en los ultimos dias?",
+                Respuesta: document.getElementById("Select_Covid_2").value,
+            })
+
+            InformacionCovid.push({
+                Pregunta: "Fiebre o escalofríos",
+                Respuesta: document.getElementById("Select_Covid_3A").value,
+            })
+
+            InformacionCovid.push({
+                Pregunta: "Nauseas o vomito",
+                Respuesta: document.getElementById("Select_Covid_3B").value,
+            })
+
+            InformacionCovid.push({
+                Pregunta: "dificultad de respirar / Fatiga",
+                Respuesta: document.getElementById("Select_Covid_3C").value,
+            })
+
+            InformacionCovid.push({
+                Pregunta: "Dolor de garganta",
+                Respuesta: document.getElementById("Select_Covid_3D").value,
+            })
+
+            InformacionCovid.push({
+                Pregunta: "Tos",
+                Respuesta: document.getElementById("Select_Covid_3E").value,
+            })
+
+            InformacionCovid.push({
+                Pregunta: "Perdida del gusto/olfato",
+                Respuesta: document.getElementById("Select_Covid_3F").value,
+            })
+
+
+
 
             Data.inf_Covid = InformacionCovid;
 
             console.log(InformacionCovid)
             console.log(Data)
-        }
 
     }
 
@@ -1304,14 +1447,12 @@
         document.getElementById("div_InformacionConsulta").style.display = "none";
         ResetRespuestas();
         delete Data.inf_Covid;
+        InformacionCovid=[];
         console.log(Data)
     }
 
     function Enviar() {
 
-       /*  console.log(Data)
-
-        alert("Clinica Sugerida Algoritmo: "+ Data.ClinicaSugerida + "\n\n" + "(Realizar Envio al backend y espera de respuesta.)"); */
 
         document.getElementById("boton1").style.display = "none";
         document.getElementById("boton2").style.display = "";
@@ -1450,20 +1591,12 @@
 
         }
 
-        while (pila_textArea.size() != 0) {
-            aux = pila_textArea.Ver_ultimo();
-            //Activar_OpcionesTextArea(aux);
-            document.getElementById(`${aux}`).disabled = false;
-            document.getElementById(`${aux}`).value = "";
-            document.getElementById(`${aux}`).classList.remove('is-invalid')
-            pila_textArea.pop()
-        }
+
+
         Reset_OpcionesTextArea()
         document.getElementById("Boton_Enviar").style.display = "none";
         Preguntas_Triaje = [];
 
-        console.log("Se resetearon las preguntas")
-        console.log(Preguntas_Triaje)
 
         var targetElm = document.querySelector('#Titulo')  // reference to scroll target
         targetElm.scrollIntoView();
@@ -1492,8 +1625,8 @@
 
 
                 document.getElementById("Select_1_NO_A").style.display = "none";
-                document.getElementById("Select_1_SI").style.display = "";
-                //document.getElementById("RadioB").style.display = "";
+                document.getElementById("Select_1_P1").style.display = "";
+                //document.getElementById("Select_1_SI").style.display = "";
 
             } else {
 
@@ -1507,40 +1640,71 @@
                 pila_div.push("Select_1_NO_A");
                 pila_RadioButtons.push("RadioOptions_1");
 
-                document.getElementById("Select_1_SI").style.display = "none";
+                //document.getElementById("Select_1_SI").style.display = "none";
+                document.getElementById("Select_1_P1").style.display = "none";
                 document.getElementById("Select_1_NO_A").style.display = "";
             }
         }
     });
 
 
+    /* ##########  NUEVAS PREGUNTAS ################ */
+
+    var select_1_P1 = document.getElementById('Select_1_P1');
+    select_1_P1.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Select_1_P1') {
+
+            
+
+            Preguntas_Triaje.push({
+                Pregunta: "¿Cuando empezo el dolor?",
+                Respuesta: target.value,
+            });
+
+
+            Desactivar_Opciones("Options_Select_1_P1");
+            pila_div.push("Select_1_P1");
+            pila_RadioButtons.push("Options_Select_1_P1");
+            document.getElementById("Select_1_P2").style.display = "";
+
+
+        }
+    });
+
+
+    var select_1_P2 = document.getElementById('Select_1_P2');
+    select_1_P2.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Select_1_P2') {
+
+            
+
+            Preguntas_Triaje.push({
+                Pregunta: "¿Cual ha sido la intencidad del dolor?",
+                Respuesta: target.value,
+            });
+
+
+            Desactivar_Opciones("Options_Select_1_P2");
+            pila_div.push("Select_1_P2");
+            pila_RadioButtons.push("Options_Select_1_P2");
+            document.getElementById("Select_1_SI").style.display = "";
+
+        }
+    });
+
+
+    /*########### fIN NUEVAS PREGUNTAS ################# */
+
     /* divs se la rama select1_SI */
 
     var Select_1_SI_Options = document.getElementById('Select_1_SI_Options');
     Select_1_SI_Options.addEventListener('change', ({ target }) => {
 
-        var Pregunta_1 = document.getElementById("Pregunta_1")
-
-        if ((Pregunta_1.value == '') || (Pregunta_1.value.length < 10)) {
-
-            console.log("esta vacio")
-            Pregunta_1.classList.add('is-invalid')
-            Activar_Opciones("Options_Select1_SI")
-
-
-        } else {
-            pila_textArea.push("Pregunta_1");
-            document.getElementById("Pregunta_1").disabled = true;
-            Pregunta_1.classList.remove('is-invalid')
-
-
 
             if (target.getAttribute('name') === 'Options_Select1_SI') {
 
-                Preguntas_Triaje.push({
-                    Pregunta: "¿Cuando Comenzo el dolor?",
-                    Respuesta: Pregunta_1.value,
-                });
 
                 Preguntas_Triaje.push({
                     Pregunta: "Localizacion: ¿El dolor esta asociacio a..?",
@@ -1624,7 +1788,7 @@
             }
 
 
-        }
+        
 
     });
 

@@ -1,0 +1,35 @@
+[
+    {
+        "model": "clinics.clinic",
+        "fields": {
+          "name": "Periodoncia"
+        }
+      },
+      {
+        "model": "clinics.clinic",
+        "fields": {
+          "name": "Endodoncia"
+        }
+      },
+      {
+        "model": "clinics.clinic",
+        "fields": {
+          "name": "Operatoria Dental"
+        }
+      },{
+        "model": "clinics.clinic",
+        "fields": {
+          "name": "Cirugia"
+        }
+      },{
+        "model": "clinics.clinic",
+        "fields": {
+          "name": "Estomatología"
+        }
+      },{
+        "model": "clinics.clinic",
+        "fields": {
+          "name": "Integral del Adulto"
+        }
+      }
+  ]
