@@ -127,6 +127,7 @@
             <div class="justify-content-md-end  collapse navbar-collapse" id="navbarCollapse">
 
                 <button class="btn btn-primary" onclick="location.href='{% url 'login' %}'" type="submit">Iniciar Sesion</button>
+                <button class="btn btn-primary" style="display:none" onclick="location.href='{% url 'Home' %}'" type="submit" id="boton_reload"></button>
             </div>
         </div>
     </nav>
@@ -1324,7 +1325,7 @@
 
         } else {
 
-            console.log("FINISH")
+            
             return true;
 
         }
@@ -1363,8 +1364,6 @@
 
             Data.inf_Personal = InformacionPersonal;
 
-            console.log(InformacionPersonal)
-            console.log(Data)
         }
     }
 
@@ -1424,8 +1423,7 @@
 
             Data.inf_Covid = InformacionCovid;
 
-            console.log(InformacionCovid)
-            console.log(Data)
+         
 
     }
 
@@ -1438,7 +1436,6 @@
         document.getElementById("div_InformacionCovid").style.display = "none";
 
         delete Data.inf_Personal;
-        console.log(Data)
     }
 
     function FunctionCancelar_2() {
@@ -1448,7 +1445,6 @@
         ResetRespuestas();
         delete Data.inf_Covid;
         InformacionCovid=[];
-        console.log(Data)
     }
 
     function Enviar() {
@@ -1458,9 +1454,6 @@
         document.getElementById("boton2").style.display = "";
 
         
-
-
-        console.log(Data)
 
         /*alert("revisar consola web, DOM \n" + JSON.stringify(Data));*/
         $.ajax({
@@ -1486,24 +1479,16 @@
                 document.getElementById("boton2").style.display = "none";
                 document.getElementById("boton1").style.display = "";
 
+                setTimeout(() => {
+                    document.getElementById("boton_reload").click();
+                }, 5000);
+
+
             },
 
             error : function(xhr, status, error) {
-                console.log(xhr)
-                console.log(status)
-                console.log(error)
 
                 document.getElementById('ErrorModalLabel').innerHTML='ERROR <i class="bi bi-x-circle-fill"></i>: </br>' +  xhr.responseText;
-
-                //if(xhr.responseText == "Error_email")
-                //{
-                //    document.getElementById('ErrorModalLabel').innerHTML='ERROR <i class="bi bi-x-circle-fill"></i>: </br>  Correo actualmente en uso por otro paciente';
-                //
-                //}
-                //else{
-                //    document.getElementById('ErrorModalLabel').innerHTML='ERROR <i class="bi bi-x-circle-fill"></i>: </br>  xhr.responseText';
-
-               // }
 
                 var ErrorModal = new bootstrap.Modal(document.getElementById('ErrorModal'), {
                 keyboard: false
@@ -1524,7 +1509,6 @@
     function Desactivar_Opciones(Div_Actual) {
 
         var x = document.getElementsByClassName(`${Div_Actual}`);
-        //console.log(x)
         var i;
         for (i = 0; i < x.length; i++) {
             x[i].disabled = true;
@@ -1535,7 +1519,7 @@
     function Activar_Opciones(Div_Actual) {
 
         var x = document.getElementsByClassName(`${Div_Actual}`);
-        //console.log(x)
+       
         var i;
         for (i = 0; i < x.length; i++) {
             x[i].disabled = false;
@@ -1547,7 +1531,7 @@
     function Activar_Opciones(Div_Actual) {
 
         var x = document.getElementsByClassName(`${Div_Actual}`);
-        //console.log(x)
+        
         var i;
         for (i = 0; i < x.length; i++) {
             x[i].disabled = false;
@@ -1560,7 +1544,7 @@
     function Reset_OpcionesTextArea() {
 
         var x = document.getElementsByClassName(`TextArea_question`);
-        //console.log(x)
+        
         var i;
         for (i = 0; i < x.length; i++) {
             x[i].disabled = false;
@@ -1576,7 +1560,7 @@
 
         while (pila_div.size() != 0) {
             aux = pila_div.Ver_ultimo();
-            //console.log(aux)
+            
             document.getElementById(`${aux}`).style.display = "none";
             pila_div.pop()
 

@@ -6,4 +6,5 @@ urlpatterns = [
     path('', triage_view),
     path('login', login_view, name='login'),
     path('save', save_patient_data_view, name='save'),
+    path('', triage_view,name='Home'),
 ]
