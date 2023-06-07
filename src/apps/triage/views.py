@@ -1,7 +1,7 @@
 import json
 
 from django.db import IntegrityError
-from django.http import HttpResponseRedirect, JsonResponse, HttpResponse, HttpResponseBadRequest
+from django.http import HttpResponseRedirect, HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render
 from django.urls import reverse
 
@@ -46,5 +46,6 @@ def save_patient_data_view(request):
             error_message = "Cédula"
 
         return HttpResponseBadRequest(f"Alguno de los datos ya se registró anteriormente: {error_message}")
-    except Exception:
-        return HttpResponseBadRequest(f"Error al procesar los datos")
+    except Exception as exc:
+        print(exc)
+        return HttpResponseBadRequest(f"Error al procesar los datos{exc}")

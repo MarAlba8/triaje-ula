@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import History
+from history.models import History
 
 
 def custom_titled_filter(title):

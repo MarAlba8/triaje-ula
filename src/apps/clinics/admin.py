@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Clinic
+from clinics.models import Clinic
 
 
 # Register your models here.
