@@ -1,0 +1,2591 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Triaje Online Odonlogia</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/Icon_logo.PNG" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/home.css' %}" rel="stylesheet" />
+
+
+
+    <!-- <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch; 
+        }
+
+
+
+        .carousel {
+        margin-bottom: 4rem;
+        }
+        /* Since positioning the image, we need to help out the caption */
+        .carousel-caption {
+        bottom: 1rem;
+        z-index: 10;
+        }
+
+        /* Declare heights because of positioning of img element */
+        .carousel-item {
+        height: 32rem;
+        }
+
+
+        .carousel-caption{
+            background-color: rgba(3, 3, 3, 0.479);
+            border-radius: 15px;
+            font-weight: 600;
+            border: #1f00ce;
+            color: #ffffff
+        }
+
+
+
+
+
+    </style> -->
+
+
+
+
+
+
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">TRIAJE ONLINE ODONTOLOGIA ULA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="justify-content-md-end  collapse navbar-collapse" id="navbarCollapse">
+
+                <button class="btn btn-primary" onclick="location.href='{% url 'login' %}'" type="submit">Iniciar Sesion</button>
+                <button class="btn btn-primary" style="display:none" onclick="location.href='{% url 'Home' %}'" type="submit" id="boton_reload"></button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+        
+
+
+        
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="3000">
+            <img src="{% static 'assets/img/imagen_1.png' %}" alt="Los Angeles" class="d-block" style="width:100%; height: 100%;">
+            <div class="carousel-caption">
+              <h1>Bienvenido al Sistema</h1>
+              <h1>de Triaje Online</h1> </br>
+              <p>Un sistema creado para optimizar el control y asignacion de citas para los usuarios de nuestra facultad de odonlogia de la Universidad de los Andes</p>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="6000">
+            <img src="{% static 'assets/img/imagen_2.jpg' %}" alt="" class="d-block" style="width:100%; height: 100%;">
+            <div class="carousel-caption">
+              <h2>Pasos a Seguir:</h2>
+              <div style="text-align:center;"> </br>
+              <p>1. Click en la seccion de abajo para comenzar </p>
+              <p>2. Introduzca sus datos personales</p>
+              <p>3. Responda las preguntas referente al Covid-19 segun su caso</p>
+              <p>4. Responda las preguntas medicas de triaje segun caso</p>
+              <p>5. Envie sus respuestas y este atento a la de su confirmacion para cita medica por los medios de contacto ingresados</p>
+            </div>
+            </div> 
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'assets/img/imagen_3.png' %}" alt="" class="d-block" style="width:100%; height: 100%;">
+            <div class="carousel-caption">
+              <h3>Atento a su informacion de contacto para la confirmacion de su cita</h3>
+            </div>  
+          </div>
+        </div>
+        
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+
+
+    <!-- Contact Section-->
+    <section class="page-section" id="contact"> </br></br>
+        <div class="container justify-content-center">
+            <!-- Contact Section Heading-->
+
+            <!-- Icon Divider-->
+            <h2 id="Titulo" class="page-section-heading text-center text-uppercase text-secondary mb-0">triaje Online
+            </h2>
+            </br></br>
+
+  
+
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+
+            <div class="gap-2 col-6 justify-content: center; mx-auto" id="div_BotonEmpezar" >
+                <button type="button" class="btn btn-dark btn-lg" onclick="MostrarTriaje()"> <i class="bi bi-hand-index"></i> COMENZAR </button>
+            </div>
+            </h2>
+
+
+            <!-- Contact Section Form-->
+
+            <div class="container " class="align-center" style=" margin-left: 15%;"   ></br>
+
+                <div class="align-items-center mx-auto" id="div_Triaje" style="display:none;"   >
+                    <form id="regiration_form" novalidate action="" method="post"> {% csrf_token %}
+                        {% csrf_token %}
+                        <div id="div_InformacionPersonal" class="align-items-center mx-auto">
+                            <fieldset>
+                                <h2 class="form-group col-9 fs-1">Paso 1: Informacion Personal</h2>
+                                <p> <i class="bi bi-info-circle"></i> Asegurese que la informacion ingresada sea actual</p>
+
+                                <div class="form-group col-6">
+                                    <label style="padding-top: 15px;" for="Nombre">
+                                        <h5>Nombres</h5>
+                                    </label>
+                                    <input autocomplete="off" type="email" class="form-control " id="Nombre"
+                                        name="Nombre" placeholder="Nombre">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label style="padding-top: 15px;" for="Apellido">
+                                        <h5>Apellidos</h5>
+                                    </label>
+                                    <input autocomplete="off" type="" class="form-control" id="Apellido" name="Apellido"
+                                        placeholder="Apellido">
+                                </div>
+                                <label style="padding-top: 15px;" for="Cedula">
+                                    <h5>Cedula</h5>
+                                </label>
+                                <div class="form-group input-group col-6">
+                                    <!-- <label style="padding-top: 15px;" for="Cedula">
+                                        <h5>Cedula</h5>
+                                    </label> -->
+                                    <div class="form-group  col-1" style="margin-right: 20px;">
+                                        <select class="form-select col-1" id="TipoCedula">
+                                            <option value="V" selected>V</option>
+                                            <option value="E">E</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group  col-5">
+                                        <input autocomplete="off" type="number" class="form-control" id="Cedula"
+                                            name="Cedula" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label style="padding-top: 15px;" for="Telefono">
+                                        <h5>Telefono</h5>
+                                    </label>
+                                    <input autocomplete="off" type="number" step="0" class="form-control" id="Telefono"
+                                        name="Telefono" placeholder="04140000000">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label style="padding-top: 15px;" for="Email">
+                                        <h5>Email</h5>
+                                    </label>
+                                    <input autocomplete="off" type="email" step="0" class="form-control" id="Email"
+                                        name="Email" placeholder="email@gmail.com">
+                                </div>
+                                </br>
+                                <div class="col-6 d-md-flex justify-content-md-end">
+                                <input autocomplete="off" style="padding-top: 5px;" type="button"
+                                    onclick="FunctionInforPersonal()" class="btn btn-primary" value="Siguiente" />
+                                </div>  
+                            </fieldset>
+                        </div>
+
+                        <div id="div_InformacionCovid" style="display: none;">
+                            <fieldset>
+
+                                <h2 class="form-group col-9 fs-1"> Paso 2: Informacion Covid</h2> </br>
+
+                                <!-- ################################### -->
+
+                                <div class="form-group col-9">
+                                    <label style="padding-top: 15px;" for="">
+                                        <h5>¿Ha sido diagnosticado con COVID-19 en los últimos 15 días?</h5>
+                                    </label>
+                                    <div class="form-group col-4">
+                                        <select class="form-select" id="Select_Covid_1" aria-label="Default select example">
+                                            <option selected value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div> </br>     
+                                
+                                <div class="form-group col-9">
+                                    <label style="padding-top: 15px;" for="">
+                                        <h5>¿Has estado con alguien que ha tenido COVID-19 en los ultimos dias?</h5>
+                                    </label>
+                                    <div class="form-group col-4">
+                                        <select class="form-select" id="Select_Covid_2" aria-label="Default select example">
+                                            <option selected value="No">No</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No recuerdo">No recuerdo</option>
+                                        </select>
+                                    </div>
+                                </div> </br>
+
+                               
+                                <label class="form-group col-9" style="padding-top: 15px;" for="">
+                                    <h5>¿Ha experimentado cualquiera de los siguientes síntomas?</h5>
+                                </label>
+                                
+
+                                <div>
+                                    <div class=" form-check-inline col-5">
+                                        <label style="padding-top: 15px;" for="">
+                                            <h6>Fiebre o escalofríos</h6>
+                                        </label>
+                                    </div>
+                                    <div class=" form-check-inline">
+                                        <select class="form-select col-1" id="Select_Covid_3A" aria-label="Default select example">
+                                            <option selected value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col- 7">
+                                    <div class=" form-check-inline col-5">
+                                        <label style="padding-top: 15px;" for="">
+                                            <h6>Nauseas o vomito</h6>
+                                        </label>
+                                    </div>
+                                    <div class=" form-check-inline">
+                                        <select class="form-select col-1" id="Select_Covid_3B" aria-label="Default select example">
+                                            <option selected value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class=" form-check-inline col-5">
+                                        <label style="padding-top: 15px;" for="">
+                                            <h6>dificultad de respirar / Fatiga</h6>
+                                        </label>
+                                    </div>
+                                    <div class=" form-check-inline">
+                                        <select class="form-select col-1" id="Select_Covid_3C" aria-label="Default select example">
+                                            <option selected value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div>
+                                    <div class=" form-check-inline col-5">
+                                        <label style="padding-top: 15px;" for="">
+                                            <h6>Dolor de garganta</h6>
+                                        </label>
+                                    </div>
+                                    <div class=" form-check-inline">
+                                        <select class="form-select col-1" id="Select_Covid_3D" aria-label="Default select example">
+                                            <option selected value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class=" form-check-inline col-5">
+                                        <label style="padding-top: 15px;" for="">
+                                            <h6>Tos</h6>
+                                        </label>
+                                    </div>
+                                    <div class=" form-check-inline">
+                                        <select class="form-select col-1" id="Select_Covid_3E" aria-label="Default select example">
+                                            <option selected value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class=" form-check-inline col-5">
+                                        <label style="padding-top: 15px;" for="">
+                                            <h6>Perdida del gusto/olfato</h6>
+                                        </label>
+                                    </div>
+                                    <div class=" form-check-inline">
+                                        <select class="form-select col-1" id="Select_Covid_3F" aria-label="Default select example">
+                                            <option selected value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>  </br>
+
+                                <!-- ################################### -->
+
+
+                               
+                                <div class="col-6 d-flex justify-content-between align-items-center">
+                                    <input style="padding-top: 5px;" type="button" onclick="FunctionCancelar_1()"
+                                        class="btn btn-primary" value="Atras" />
+
+                                        <div class="d-md-flex justify-content-md-end">
+                                            <input style="padding-top: 5px;" type="button" onclick="FunctionInforCovid()"
+                                                class="btn btn-primary" value="Siguiente" />
+                                        </div>
+                                   
+                                </div>
+   
+                               
+                            </fieldset>
+                        </div>
+
+                        <div id="div_InformacionConsulta" style="display: none;">
+                            <fieldset>
+
+                                <h2 class="form-group col-9 fs-1"> Paso 3: Informacion Consulta</h2>
+                                <div class="form-group col-6" id="Select_1">
+                                    <label style="padding-top: 15px;" for="email">
+                                        <h5>¿Siente dolor?</h5>
+                                    </label> </br>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input RadioOptions_1" type="radio"
+                                            name="inlineRadioOptions" id="inlineRadio1" value="si" />
+                                        <label class="form-check-label" for="inlineRadio1">SI</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input RadioOptions_1" type="radio"
+                                            name="inlineRadioOptions" id="inlineRadio2" value="no" />
+                                        <label class="form-check-label" for="inlineRadio2">NO</label>
+                                    </div>
+
+                                </div>
+
+                                <!-- ############# NUEVAS PREGUNTAS ################################### -->
+
+                                <div class="form-group col-6" style="display: none;" id="Select_1_P1">
+                                    <label style="padding-top: 15px;" for="email">
+                                        <h5>¿Cuando empezo el dolor?</h5>
+                                    </label> </br>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input Options_Select_1_P1" type="radio"
+                                            name="Options_Select_1_P1" id="" value="1-3 Dias" />
+                                        <label class="form-check-label" for="inlineRadio1">1-3 Dias</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input Options_Select_1_P1" type="radio"
+                                            name="Options_Select_1_P1" id="" value="3-7 Dias" />
+                                        <label class="form-check-label" for="inlineRadio2">3-7 Dias</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input Options_Select_1_P1" type="radio"
+                                            name="Options_Select_1_P1" id="" value="Mas de 1 semana" />
+                                        <label class="form-check-label" for="inlineRadio2">Mas de 1 semana</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input Options_Select_1_P1" type="radio"
+                                            name="Options_Select_1_P1" id="" value="Mas de 1 Mes" />
+                                        <label class="form-check-label" for="inlineRadio2">Mas de 1 Mes</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-6" style="display: none;" id="Select_1_P2">
+                                    <label style="padding-top: 15px;" for="email">
+                                        <h5>¿Cual ha sido la intencidad del dolor?</h5>
+                                    </label> </br>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input Options_Select_1_P2" type="radio"
+                                            name="Options_Select_1_P2" id="" value="Poca" />
+                                        <label class="form-check-label" for="inlineRadio1">Poca</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input Options_Select_1_P2" type="radio"
+                                            name="Options_Select_1_P2" id="inlineRadio2" value="Intermedia" />
+                                        <label class="form-check-label" for="inlineRadio2">Intermedia</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input Options_Select_1_P2" type="radio"
+                                            name="Options_Select_1_P2" id="inlineRadio2" value="Fuerte" />
+                                        <label class="form-check-label" for="inlineRadio2">Fuerte</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input autocomplete="off" class="form-check-input Options_Select_1_P2" type="radio"
+                                            name="Options_Select_1_P2" id="inlineRadio2" value="Muy Fuerte" />
+                                        <label class="form-check-label" for="inlineRadio2">Muy Fuerte</label>
+                                    </div>
+                                </div>
+
+
+                                <!-- ############# FIN NUEVAS PREGUNTAS ################################### -->
+
+
+
+
+
+
+                                <!-- *********************** RAMA DEL SI *****************************  -->
+                                <div id="Select_1_SI" style="display: none;">
+
+
+                                    <div id="Select_1_SI_Options" class="form-group col-6">
+                                        <label style="padding-top: 15px;" for="">
+                                            <h5>Localizacion: El dolor esta asociacio a..</h5>
+                                        </label> </br>
+                                        <div class="form-check form-check-inline">
+                                            <input autocomplete="off" class="form-check-input Options_Select1_SI"
+                                                type="radio" name="Options_Select1_SI" id="" value="Dientes" />
+                                            <label class="form-check-label" for="inlineRadio2">Dientes</label>
+                                        </div></br>
+                                        <div class="form-check form-check-inline">
+                                            <input autocomplete="off" class="form-check-input Options_Select1_SI"
+                                                type="radio" name="Options_Select1_SI" id="inlineRadio_2"
+                                                value="Encias" />
+                                            <label class="form-check-label" for="inlineRadio2">Encias</label>
+                                        </div></br>
+                                        <div class="form-check form-check-inline">
+                                            <input autocomplete="off" class="form-check-input Options_Select1_SI"
+                                                type="radio" name="Options_Select1_SI" id="inlineRadio_3"
+                                                value="Traumatismo" />
+                                            <label class="form-check-label" for="inlineRadio2">Traumatismo</label>
+                                        </div></br>
+                                        <div class="form-check form-check-inline">
+                                            <input autocomplete="off" class="form-check-input Options_Select1_SI"
+                                                type="radio" name="Options_Select1_SI" id="inlineRadio_4"
+                                                value="Extraccion" />
+                                            <label class="form-check-label" for="inlineRadio2">Extraccion Dental
+                                                Reciente</label>
+                                        </div></br>
+                                        <div class="form-check form-check-inline">
+                                            <input autocomplete="off" class="form-check-input Options_Select1_SI"
+                                                type="radio" name="Options_Select1_SI" id="inlineRadio_7"
+                                                value="Infeccion" />
+                                            <label class="form-check-label" for="inlineRadio2">Infeccion-Inflamacion
+                                                Reciente</label>
+                                        </div></br>
+                                        <div class="form-check form-check-inline">
+                                            <input autocomplete="off" class="form-check-input Options_Select1_SI"
+                                                type="radio" name="Options_Select1_SI" id="inlineRadio_5"
+                                                value="Paladar" />
+                                            <label class="form-check-label" for="inlineRadio2">Paladar, labios,
+                                                lengua, piso garganta u otro. </label>
+                                        </div></br>
+                                        <div class="form-check form-check-inline">
+                                            <input autocomplete="off" class="form-check-input Options_Select1_SI"
+                                                type="radio" name="Options_Select1_SI" id="inlineRadio_6"
+                                                value="Imposibilidad" />
+                                            <label class="form-check-label" for="inlineRadio2">Imposibilidad de abrir la
+                                                boca o lesion en la articulacion temporomandibular</label>
+                                        </div>
+
+                                        <!-- Rama Opcion dientes -->
+
+                                        <div id="Dientes_1" style="display: none;">
+
+                                            <div class="form-group col-14">
+                                                <label style="padding-top: 15px;">
+                                                    <h5>¿Esta en la Ultima Muela? </h5>
+                                                </label> </br>
+                                                <div class="form-check form-check-inline">
+                                                    <input autocomplete="off" class="form-check-input Options_Dientes_1"
+                                                        type="radio" name="Options_Dientes_1" id="" value="si" />
+                                                    <label class="form-check-label" for="">SI</label>
+                                                </div>
+                                                <div class="form-check form-check-inline ">
+                                                    <input autocomplete="off" class="form-check-input Options_Dientes_1"
+                                                        type="radio" name="Options_Dientes_1" id="" value="no" />
+                                                    <label class="form-check-label" for="">NO</label>
+                                                </div>
+                                            </div>
+
+
+                                            <div id="Dientes_2" style="display: none;">
+
+                                                <div class="form-group col-14">
+                                                    <label style="padding-top: 15px;">
+                                                        <h5>¿Esta cubierta por encia? </h5>
+                                                    </label> </br>
+                                                    <div class="form-check form-check-inline">
+                                                        <input autocomplete="off"
+                                                            class="form-check-input Options_Dientes_2" type="radio"
+                                                            name="Options_Dientes_2" id="" value="si" />
+                                                        <label class="form-check-label" for="">SI</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline ">
+                                                        <input autocomplete="off"
+                                                            class="form-check-input Options_Dientes_2" type="radio"
+                                                            name="Options_Dientes_2" id="" value="no" />
+                                                        <label class="form-check-label" for="">NO</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                            <div id="Dientes_3" style="display: none;">
+
+                                                <div class="form-group col-14">
+                                                    <label style="padding-top: 15px;">
+                                                        <h5>¿El dolor es intenso y/o constante? </h5>
+                                                    </label> </br>
+                                                    <div class="form-check form-check-inline">
+                                                        <input autocomplete="off"
+                                                            class="form-check-input Options_Dientes_3" type="radio"
+                                                            name="Options_Dientes_3" id="" value="si" />
+                                                        <label class="form-check-label" for="">SI</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline ">
+                                                        <input autocomplete="off"
+                                                            class="form-check-input Options_Dientes_3" type="radio"
+                                                            name="Options_Dientes_3" id="" value="no" />
+                                                        <label class="form-check-label" for="">NO</label>
+                                                    </div>
+                                                </div>
+
+                                                <div id="Dientes_4" style="display: none;">
+
+                                                    <div class="form-group col-14">
+                                                        <label style="padding-top: 15px;">
+                                                            <h5>¿Se agudiza con frio, calor o dulce?</h5>
+                                                        </label> </br>
+                                                        <div class="form-check form-check-inline">
+                                                            <input autocomplete="off"
+                                                                class="form-check-input Options_Dientes_4" type="radio"
+                                                                name="Options_Dientes_4" id="" value="si" />
+                                                            <label class="form-check-label" for="">SI</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline ">
+                                                            <input autocomplete="off"
+                                                                class="form-check-input Options_Dientes_4" type="radio"
+                                                                name="Options_Dientes_4" id="" value="no" />
+                                                            <label class="form-check-label" for="">NO</label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div> <!-- FIN RAMA DIENTES -->
+
+                                        <!-- RAMA ENCIAS -->
+                                        <div id="Encias_1" style="display: none;">
+
+                                            <div class="form-group col-14">
+                                                <label style="padding-top: 15px;">
+                                                    <h5>¿Hay una capa blanca sobre la lesion?</h5>
+                                                </label> </br>
+                                                <div class="form-check form-check-inline">
+                                                    <input autocomplete="off" class="form-check-input Options_Encias_1"
+                                                        type="radio" name="Options_Encias_1" id="" value="si" />
+                                                    <label class="form-check-label" for="">SI</label>
+                                                </div>
+                                                <div class="form-check form-check-inline ">
+                                                    <input autocomplete="off" class="form-check-input Options_Encias_1"
+                                                        type="radio" name="Options_Encias_1" id="" value="no" />
+                                                    <label class="form-check-label" for="">NO</label>
+                                                </div>
+                                            </div>
+
+                                        </div> <!-- FIN RAMA DIENTES -->
+
+
+                                        <!-- RAMA TRAUMATISMO -->
+                                        <div id="Traumatismo_1" class="form-group col-14" style="display: none;">
+
+                                            <div class="form-group">
+                                                <label style="padding-top: 15px;">
+                                                    <h5>Tipo de Trauma</h5>
+                                                </label> </br>
+                                                <div class="form-check form-check-inline">
+                                                    <input autocomplete="off"
+                                                        class="form-check-input Options_Traumatismo_1" type="radio"
+                                                        name="Options_Traumatismo_1" id="" value="Oseo" />
+                                                    <label class="form-check-label" for="">Oseo</label>
+                                                </div>
+                                                <div class="form-check form-check-inline ">
+                                                    <input autocomplete="off"
+                                                        class="form-check-input Options_Traumatismo_1" type="radio"
+                                                        name="Options_Traumatismo_1" id="" value="Dental" />
+                                                    <label class="form-check-label" for="">Dental</label>
+                                                </div>
+                                            </div>
+
+
+                                            <div id="Traumatismo_2" style="display: none;">
+
+                                                <div class="form-group col-14">
+                                                    <label style="padding-top: 15px;">
+                                                        <h5>¿Hubo Sangrado?</h5>
+                                                    </label> </br>
+                                                    <div class="form-check form-check-inline">
+                                                        <input autocomplete="off"
+                                                            class="form-check-input Options_Traumatismo_2" type="radio"
+                                                            name="Options_Traumatismo_2" id="" value="si" />
+                                                        <label class="form-check-label" for="">SI</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline ">
+                                                        <input autocomplete="off"
+                                                            class="form-check-input Options_Traumatismo_2" type="radio"
+                                                            name="Options_Traumatismo_2" id="" value="no" />
+                                                        <label class="form-check-label" for="">NO</label>
+                                                    </div>
+                                                </div>
+
+
+                                                <div id="Traumatismo_3" style="display: none;">
+
+                                                    <div class="form-group col-14">
+                                                        <label style="padding-top: 15px;">
+                                                            <h5>¿Perdida de Estructura Dental?</h5>
+                                                        </label> </br>
+                                                        <div class="form-check form-check-inline">
+                                                            <input autocomplete="off"
+                                                                class="form-check-input Options_Traumatismo_3"
+                                                                type="radio" name="Options_Traumatismo_3" id=""
+                                                                value="Con_ExposicionPulpar" />
+                                                            <label class="form-check-label" for="">Con Exposicion
+                                                                Pulpar</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline ">
+                                                            <input autocomplete="off"
+                                                                class="form-check-input Options_Traumatismo_3"
+                                                                type="radio" name="Options_Traumatismo_3" id=""
+                                                                value="Sin_ExposicionPulpar" />
+                                                            <label class="form-check-label" for="">Sin Exposicion
+                                                                Pulpar</label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div> <!-- FIN RAMA TRAUMATISMO -->
+
+                                        <!-- RAMA INFECCION -->
+                                        <div id="Infeccion_1" style="display: none;">
+
+                                            <div class="form-group col-14">
+                                                <label style="padding-top: 15px;">
+                                                    <h5>¿Dificultad para abrir la boca o tragar?</h5>
+                                                </label> </br>
+                                                <div class="form-check form-check-inline">
+                                                    <input autocomplete="off"
+                                                        class="form-check-input Options_Infeccion_1" type="radio"
+                                                        name="Options_Infeccion_1" id="" value="si" />
+                                                    <label class="form-check-label" for="">SI</label>
+                                                </div>
+                                                <div class="form-check form-check-inline ">
+                                                    <input autocomplete="off"
+                                                        class="form-check-input Options_Infeccion_1" type="radio"
+                                                        name="Options_Infeccion_1" id="" value="no" />
+                                                    <label class="form-check-label" for="">NO</label>
+                                                </div>
+                                            </div>
+
+                                        </div> <!-- FIN RAMA INFECCION -->
+
+
+
+                                    </div>
+                                </div>
+
+
+                                <!-- *********************** RAMA DEL NO *****************************  -->
+                                <!-- Pregunta Select1_No_A -->
+                                <div id="Select_1_NO_A" style="display: none;">
+
+                                    <div class="form-group col-6">
+                                        <label style="padding-top: 15px;">
+                                            <h5>¿Presenta Alguna lesion en tejido blando?</h5>
+                                        </label> </br>
+                                        <div class="form-check form-check-inline">
+                                            <input autocomplete="off" class="form-check-input Options_Select1_NO_A"
+                                                type="radio" name="Options_Select1_NO_A" id="" value="si" />
+                                            <label class="form-check-label" for="inlineRadio1">SI</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input autocomplete="off" class="form-check-input Options_Select1_NO_A"
+                                                type="radio" name="Options_Select1_NO_A" id="" value="no" />
+                                            <label class="form-check-label" for="inlineRadio2">NO</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pregunta Select1_No_B -->
+                                    <div id="Select_1_NO_B" style="display: none;">
+
+                                        <div class="form-group col-6">
+                                            <label style="padding-top: 15px;">
+                                                <h5>¿El motivo de la consulta está asociado al uso de prótesis dental
+                                                    removible??</h5>
+                                            </label> </br>
+                                            <div class="form-check form-check-inline">
+                                                <input autocomplete="off" class="form-check-input Options_Select1_NO_B"
+                                                    type="radio" name="Options_Select1_NO_B" id="" value="si" />
+                                                <label class="form-check-label" for="">SI</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input autocomplete="off" class="form-check-input Options_Select1_NO_B"
+                                                    type="radio" name="Options_Select1_NO_B" id="" value="no" />
+                                                <label class="form-check-label" for="">NO</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- Pregunta Select1_No_C -->
+                                        <div id="Select_1_NO_C" style="display: none;">
+
+                                            <div class="form-group col-6">
+                                                <label style="padding-top: 15px;">
+                                                    <h5>¿Requiere una Protesis dental?</h5>
+                                                </label> </br>
+                                                <div class="form-check form-check-inline">
+                                                    <input autocomplete="off"
+                                                        class="form-check-input Options_Select1_NO_C" type="radio"
+                                                        name="Options_Select1_NO_C" id="" value="si" />
+                                                    <label class="form-check-label" for="">SI</label>
+                                                </div>
+                                                <div class="form-check form-check-inline ">
+                                                    <input autocomplete="off"
+                                                        class="form-check-input Options_Select1_NO_C" type="radio"
+                                                        name="Options_Select1_NO_C" id="" value="no" />
+                                                    <label class="form-check-label" for="">NO</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Pregunta Select1_No_D -->
+                                            <div id="Select_1_NO_D" style="display: none;">
+
+                                                <div class="form-group col-6">
+                                                    <label style="padding-top: 15px;">
+                                                        <h5>¿Necesita una extracción dental?</h5>
+                                                    </label> </br>
+                                                    <div class="form-check form-check-inline">
+                                                        <input autocomplete="off"
+                                                            class="form-check-input Options_Select1_NO_D" type="radio"
+                                                            name="Options_Select1_NO_D" id="" value="si" />
+                                                        <label class="form-check-label" for="">SI</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline ">
+                                                        <input autocomplete="off"
+                                                            class="form-check-input Options_Select1_NO_D" type="radio"
+                                                            name="Options_Select1_NO_D" id="" value="no" />
+                                                        <label class="form-check-label" for="">NO</label>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Pregunta Select1_No_E -->
+                                                <div id="Select_1_NO_E" style="display: none;">
+
+                                                    <div class="form-group col-6">
+                                                        <label style="padding-top: 15px;">
+                                                            <h5>¿Necesita realizar un proceso quirurgico?</h5>
+                                                        </label> </br>
+                                                        <div class="form-check form-check-inline">
+                                                            <input autocomplete="off"
+                                                                class="form-check-input Options_Select1_NO_E"
+                                                                type="radio" name="Options_Select1_NO_E" id=""
+                                                                value="si" />
+                                                            <label class="form-check-label" for="">SI</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline ">
+                                                            <input autocomplete="off"
+                                                                class="form-check-input Options_Select1_NO_E"
+                                                                type="radio" name="Options_Select1_NO_E" id=""
+                                                                value="no" />
+                                                            <label class="form-check-label" for="">NO</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Pregunta Select1_No_F -->
+                                                    <div id="Select_1_NO_F" style="display: none;">
+
+                                                        <div class="form-group col-6">
+                                                            <label style="padding-top: 15px;">
+                                                                <h5>¿El motivo de la consulta está asociado a caries
+                                                                    dental?</h5>
+                                                            </label> </br>
+                                                            <div class="form-check form-check-inline">
+                                                                <input autocomplete="off"
+                                                                    class="form-check-input Options_Select1_NO_F"
+                                                                    type="radio" name="Options_Select1_NO_F" id=""
+                                                                    value="si" />
+                                                                <label class="form-check-label" for="">SI</label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline ">
+                                                                <input autocomplete="off"
+                                                                    class="form-check-input Options_Select1_NO_F"
+                                                                    type="radio" name="Options_Select1_NO_F" id=""
+                                                                    value="no" />
+                                                                <label class="form-check-label" for="">NO</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Pregunta Select1_No_G -->
+                                                        <div id="Select_1_NO_G" style="display: none;">
+
+                                                            <div class="form-group col-6">
+                                                                <label style="padding-top: 15px;">
+                                                                    <h5>¿Necesita cambiar o reponer una restauración o
+                                                                        calza?</h5>
+                                                                </label> </br>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input autocomplete="off"
+                                                                        class="form-check-input Options_Select1_NO_G"
+                                                                        type="radio" name="Options_Select1_NO_G" id=""
+                                                                        value="si" />
+                                                                    <label class="form-check-label" for="">SI</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline ">
+                                                                    <input autocomplete="off"
+                                                                        class="form-check-input Options_Select1_NO_G"
+                                                                        type="radio" name="Options_Select1_NO_G" id=""
+                                                                        value="no" />
+                                                                    <label class="form-check-label" for="">NO</label>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Pregunta Select1_No_H -->
+                                                            <div id="Select_1_NO_H" style="display: none;">
+
+                                                                <div class="form-group col-6">
+                                                                    <label style="padding-top: 15px;">
+                                                                        <h5>¿Presenta sangrado al cepillarse?
+                                                                        </h5>
+                                                                    </label> </br>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input autocomplete="off"
+                                                                            class="form-check-input Options_Select1_NO_H"
+                                                                            type="radio" name="Options_Select1_NO_H"
+                                                                            id="" value="si" />
+                                                                        <label class="form-check-label"
+                                                                            for="">SI</label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline ">
+                                                                        <input autocomplete="off"
+                                                                            class="form-check-input Options_Select1_NO_H"
+                                                                            type="radio" name="Options_Select1_NO_H"
+                                                                            id="" value="no" />
+                                                                        <label class="form-check-label"
+                                                                            for="">NO</label>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Pregunta Select1_No_I -->
+                                                                <div id="Select_1_NO_I" style="display: none;">
+
+                                                                    <div class="form-group col-6">
+                                                                        <label style="padding-top: 15px;">
+                                                                            <h5>¿Requiere una limpieza dental? </h5>
+                                                                        </label> </br>
+                                                                        <div class="form-check form-check-inline">
+                                                                            <input autocomplete="off"
+                                                                                class="form-check-input Options_Select1_NO_I"
+                                                                                type="radio" name="Options_Select1_NO_I"
+                                                                                id="" value="si" />
+                                                                            <label class="form-check-label"
+                                                                                for="">SI</label>
+                                                                        </div>
+                                                                        <div class="form-check form-check-inline ">
+                                                                            <input autocomplete="off"
+                                                                                class="form-check-input Options_Select1_NO_I"
+                                                                                type="radio" name="Options_Select1_NO_I"
+                                                                                id="" value="no" />
+                                                                            <label class="form-check-label"
+                                                                                for="">NO</label>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <!-- Pregunta Select1_No_J -->
+                                                                    <div id="Select_1_NO_J" style="display: none;">
+
+                                                                        <div class="form-group col-6">
+                                                                            <label style="padding-top: 15px;">
+                                                                                <h5>¿Necesita realizar un procedimiento
+                                                                                    estético? </h5>
+                                                                            </label> </br>
+                                                                            <div class="form-check form-check-inline">
+                                                                                <input autocomplete="off"
+                                                                                    class="form-check-input Options_Select1_NO_J"
+                                                                                    type="radio"
+                                                                                    name="Options_Select1_NO_J" id=""
+                                                                                    value="si" />
+                                                                                <label class="form-check-label"
+                                                                                    for="">SI</label>
+                                                                            </div>
+                                                                            <div class="form-check form-check-inline ">
+                                                                                <input autocomplete="off"
+                                                                                    class="form-check-input Options_Select1_NO_J"
+                                                                                    type="radio"
+                                                                                    name="Options_Select1_NO_J" id=""
+                                                                                    value="no" />
+                                                                                <label class="form-check-label"
+                                                                                    for="">NO</label>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                        <!-- Pregunta Select1_No_K -->
+                                                                        <div id="Select_1_NO_K" style="display: none;">
+
+                                                                            <div class="form-group col-6">
+                                                                                <label style="padding-top: 15px;">
+                                                                                    <h5>¿Necesita realizar una revisión
+                                                                                        y consulta para referir? </h5>
+                                                                                </label> </br>
+                                                                                <div
+                                                                                    class="form-check form-check-inline">
+                                                                                    <input autocomplete="off"
+                                                                                        class="form-check-input Options_Select1_NO_K"
+                                                                                        type="radio"
+                                                                                        name="Options_Select1_NO_K"
+                                                                                        id="" value="si" />
+                                                                                    <label class="form-check-label"
+                                                                                        for="">SI</label>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="form-check form-check-inline ">
+                                                                                    <input autocomplete="off"
+                                                                                        class="form-check-input Options_Select1_NO_K"
+                                                                                        type="radio"
+                                                                                        name="Options_Select1_NO_K"
+                                                                                        id="" value="no" />
+                                                                                    <label class="form-check-label"
+                                                                                        for="">NO</label>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                    </div>
+
+
+                                                                </div>
+
+
+                                                            </div>
+
+
+                                                        </div>
+
+
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                </br>
+                                <div class="col-6 d-flex justify-content-between align-items-center">
+                                    <input style="padding-top: 5px;" type="button" onclick="FunctionCancelar_2()"
+                                        class="btn btn-primary" value="Atras" />
+                                    <input style="padding-top: 5px;" type="button" onclick="ResetRespuestas()"
+                                        name="data[password]" class="btn btn-primary" value="Reset respuestas" />
+                                </div>
+
+                                </br>
+
+
+                                <div id="Boton_Enviar" class="col-10  align-items-center" style="display: none;" >
+                                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Enviar Triaje!
+                                      </button>
+                                </div>
+                                
+                                  
+                                  <!-- Modal -->
+                                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel">Se enviara el triaje con la informacion y respuestas seleccionadas </br> ¿Confirmar Accion?
+                                        </h5> 
+                                        
+                                        </h5>
+                                          <button type="button" id="closeModal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                         
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                          <button type="button" id="boton1" class="btn btn-success" onclick="Enviar()">Enviar</button>
+                                          <button class="btn btn-success" id="boton2" type="button"style="display: none;" disabled>
+                                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                            Enviar
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+
+                                  <!-- SuccessModal -->
+                                  <div class="modal fade" id="SuccessModal" tabindex="-1" aria-labelledby="SuccessModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="SuccessModalLabel"> Se registro correctamente su triaje! <i class="bi bi-check-circle-fill"></i>
+                                        </h5>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                   <!-- ErrorModal -->
+                                   <div class="modal fade" id="ErrorModal" tabindex="-1" aria-labelledby="ErrorModalLabel" aria-hidden="true">    
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="ErrorModalLabel"> ERROR: </br>  no se registro el triaje correctamente, vuelva a intentarlo <i class="bi bi-x-circle-fill"></i>
+                                            </h5>
+                    
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                            </fieldset>
+                        </div>
+
+                    </form>
+                </div>
+
+
+
+            </div>
+
+        </div>    </br></br></br></br>
+    </section>
+
+
+    <!-- *************************************** -->
+
+
+
+
+
+
+
+    <!-- Contact Section-->
+
+    <!-- Footer-->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Nuestra Ubicacion</h4>
+                    <p class="lead mb-0">
+                        Rectorado de la Univerdad de los Andes,
+                        Centro de la Ciudad
+                        <br />
+                        Calle 24 entre Avenidas 2 y 3
+                    </p>
+                </div>
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Redes de la Facultad</h4>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i
+                            class="fab fa-fw fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i
+                            class="fab fa-fw fa-linkedin-in"></i></a>
+                </div>
+                <!-- Footer About Text-->
+                <!-- <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                    <p class="lead mb-0">
+                        Freelance is a free to use, MIT licensed Bootstrap theme created by
+                        <a href="http://startbootstrap.com">Start Bootstrap</a>
+                        .
+                    </p>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+    <!-- Copyright Section-->
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; www.ula.com.ve 2023</small></div>
+    </div>
+    <!-- Portfolio Modals-->
+    <!-- Portfolio Modal 1-->
+
+
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <!-- <script src="js/scripts.js"></script> -->
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script src="{% static 'js/cdn/jquery.min.js' %}"></script>
+
+</body>
+
+
+<script type="text/javascript">
+
+    class Pila {
+        elementos = [];
+
+        push = (elemento) => {
+            return this.elementos.push(elemento);
+        }
+        pop = () => {
+            return this.elementos.pop();
+        }
+        isempty = () => {
+            return this.elementos.length === 0;
+        }
+        empty = () => {
+            this.elementos.length = 0;
+        }
+        size = () => {
+            return this.elementos.length;;
+        }
+        Ver_ultimo = () => {
+            return this.elementos[this.elementos.length - 1];
+
+        }
+
+        Pertenece = (elementos) => {
+            return this.elementos.includes(elementos);
+
+        }
+
+    }
+
+
+
+
+
+    var pila_div = new Pila();
+    var pila_RadioButtons = new Pila();
+    //var pila_textArea = new Pila();
+
+
+    var pila = new Pila();
+    var Data = new Object();
+    var InformacionPersonal = new Object();
+    var InformacionCovid = [];
+    var Preguntas_Triaje = [];
+
+
+    function MostrarTriaje() {
+
+        document.getElementById("div_Triaje").style.display = "";
+        //document.getElementById("div_BotonEmpezar2").style.display = "";
+
+        document.getElementById("div_BotonEmpezar").style.display = "none";
+
+
+    }
+    function ValidacionInforPersonal() {
+
+        // x[i].classList.remove('is-invalid')
+
+        var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+
+
+        document.getElementById("Nombre").classList.remove('is-invalid')
+        document.getElementById("Apellido").classList.remove('is-invalid')
+        document.getElementById("Cedula").classList.remove('is-invalid')
+        document.getElementById("Telefono").classList.remove('is-invalid')
+        document.getElementById("Email").classList.remove('is-invalid')
+
+
+
+        var Nombre = document.getElementById("Nombre").value;
+        var Apellido = document.getElementById("Apellido").value;
+        var Cedula = document.getElementById("Cedula").value;
+        var Telefono = document.getElementById("Telefono").value;
+        var Email = document.getElementById('Email').value;
+
+
+        if (Nombre.length < 3) {
+
+            document.getElementById("Nombre").classList.add('is-invalid')
+            alert("Complete correctamente el campo 'Nombres'")
+            return false;
+
+
+        } else if (Apellido.length < 3) {
+
+            document.getElementById("Apellido").classList.add('is-invalid')
+            alert("Complete correctamente el campo 'Apellidos'")
+            return false;
+
+
+        } else if ((Cedula.length < 1) || (Cedula.length > 10)) {
+
+            document.getElementById("Cedula").classList.add('is-invalid')
+            alert("El Campo 'Cedula' debe tener los formatos VXXXXXXXX o EXXXXXXXX")
+    
+
+            return false;
+
+
+        } else if (Telefono.length < 2) {
+
+            document.getElementById("Telefono").classList.add('is-invalid')
+            alert("Error Campo Telefono: Debe contener el formato 041XXXXXXXX")
+            return false;
+
+        } else if ( !(validEmail.test(Email))) {
+
+            document.getElementById("Email").classList.add('is-invalid')
+            alert("Error Campo Email: Debe introducir un email con formato valido")
+            return false;
+
+        } else {
+
+            
+            return true;
+
+        }
+
+
+
+    }
+
+
+    function FunctionInforPersonal() {
+
+    
+        if (ValidacionInforPersonal() == true) {
+
+            document.getElementById("Nombre").classList.remove('is-invalid')
+            document.getElementById("Apellido").classList.remove('is-invalid')
+            document.getElementById("Cedula").classList.remove('is-invalid')
+            document.getElementById("Telefono").classList.remove('is-invalid')
+            document.getElementById("Email").classList.remove('is-invalid')
+
+
+
+
+            document.getElementById("div_InformacionPersonal").style.display = "none";
+            document.getElementById("div_InformacionCovid").style.display = "";
+
+            var targetElm = document.querySelector('#Titulo')  // reference to scroll target
+            targetElm.scrollIntoView();
+
+            InformacionPersonal.Nombre = document.getElementById("Nombre").value;
+
+            InformacionPersonal.Apellido = document.getElementById("Apellido").value;
+            InformacionPersonal.Cedula = document.getElementById("TipoCedula").value + document.getElementById("Cedula").value;
+            InformacionPersonal.Telefono = document.getElementById("Telefono").value;
+            InformacionPersonal.Email = document.getElementById("Email").value;
+
+            Data.inf_Personal = InformacionPersonal;
+
+        }
+    }
+
+
+    function FunctionInforCovid() {
+
+
+            document.getElementById("div_InformacionCovid").style.display = "none";
+            document.getElementById("div_InformacionConsulta").style.display = "";
+
+            var targetElm = document.querySelector('#Titulo')  // reference to scroll target
+            targetElm.scrollIntoView();
+
+
+            InformacionCovid.push({
+                    Pregunta: "¿Ha sido diagnosticado con COVID-19 en los últimos 15 días?",
+                    Respuesta: document.getElementById("Select_Covid_1").value,
+                })
+
+            InformacionCovid.push({
+                Pregunta: "¿Has estado con alguien que ha tenido COVID-19 en los ultimos dias?",
+                Respuesta: document.getElementById("Select_Covid_2").value,
+            })
+
+            InformacionCovid.push({
+                Pregunta: "Fiebre o escalofríos",
+                Respuesta: document.getElementById("Select_Covid_3A").value,
+            })
+
+            InformacionCovid.push({
+                Pregunta: "Nauseas o vomito",
+                Respuesta: document.getElementById("Select_Covid_3B").value,
+            })
+
+            InformacionCovid.push({
+                Pregunta: "dificultad de respirar / Fatiga",
+                Respuesta: document.getElementById("Select_Covid_3C").value,
+            })
+
+            InformacionCovid.push({
+                Pregunta: "Dolor de garganta",
+                Respuesta: document.getElementById("Select_Covid_3D").value,
+            })
+
+            InformacionCovid.push({
+                Pregunta: "Tos",
+                Respuesta: document.getElementById("Select_Covid_3E").value,
+            })
+
+            InformacionCovid.push({
+                Pregunta: "Perdida del gusto/olfato",
+                Respuesta: document.getElementById("Select_Covid_3F").value,
+            })
+
+
+
+
+            Data.inf_Covid = InformacionCovid;
+
+         
+
+    }
+
+
+    /* FUNCIONES DE CANCELAR, RETROCEDER EN FORMULARIOS */
+
+    function FunctionCancelar_1() {
+
+        document.getElementById("div_InformacionPersonal").style.display = "";
+        document.getElementById("div_InformacionCovid").style.display = "none";
+
+        delete Data.inf_Personal;
+    }
+
+    function FunctionCancelar_2() {
+
+        document.getElementById("div_InformacionCovid").style.display = "";
+        document.getElementById("div_InformacionConsulta").style.display = "none";
+        ResetRespuestas();
+        delete Data.inf_Covid;
+        InformacionCovid=[];
+    }
+
+    function Enviar() {
+
+
+        document.getElementById("boton1").style.display = "none";
+        document.getElementById("boton2").style.display = "";
+
+        
+
+        /*alert("revisar consola web, DOM \n" + JSON.stringify(Data));*/
+        $.ajax({
+            type: 'POST',
+            url: "/triage/save",
+            dataType: 'json',
+            data : {
+                'request_data': JSON.stringify(Data),
+                'csrfmiddlewaretoken': '{{ csrf_token }}',
+            } ,
+            success : function(json) {
+                
+                console.log("requested access complete");
+
+                document.getElementById('closeModal').click();
+
+                var SuccessModal = new bootstrap.Modal(document.getElementById('SuccessModal'), {
+                keyboard: false
+                })
+
+                
+                SuccessModal.show()
+                document.getElementById("boton2").style.display = "none";
+                document.getElementById("boton1").style.display = "";
+
+                setTimeout(() => {
+                    document.getElementById("boton_reload").click();
+                }, 5000);
+
+
+            },
+
+            error : function(xhr, status, error) {
+
+                document.getElementById('ErrorModalLabel').innerHTML='ERROR <i class="bi bi-x-circle-fill"></i>: </br>' +  xhr.responseText;
+
+                var ErrorModal = new bootstrap.Modal(document.getElementById('ErrorModal'), {
+                keyboard: false
+                })
+
+                document.getElementById('closeModal').click();
+                ErrorModal.show()
+                document.getElementById("boton2").style.display = "none";
+                document.getElementById("boton1").style.display = "";
+            }
+
+
+
+
+        })
+    }
+
+    function Desactivar_Opciones(Div_Actual) {
+
+        var x = document.getElementsByClassName(`${Div_Actual}`);
+        var i;
+        for (i = 0; i < x.length; i++) {
+            x[i].disabled = true;
+        }
+
+    }
+
+    function Activar_Opciones(Div_Actual) {
+
+        var x = document.getElementsByClassName(`${Div_Actual}`);
+       
+        var i;
+        for (i = 0; i < x.length; i++) {
+            x[i].disabled = false;
+            x[i].checked = false;
+        }
+
+    }
+
+    function Activar_Opciones(Div_Actual) {
+
+        var x = document.getElementsByClassName(`${Div_Actual}`);
+        
+        var i;
+        for (i = 0; i < x.length; i++) {
+            x[i].disabled = false;
+            x[i].checked = false;
+        }
+
+    }
+
+
+    function Reset_OpcionesTextArea() {
+
+        var x = document.getElementsByClassName(`TextArea_question`);
+        
+        var i;
+        for (i = 0; i < x.length; i++) {
+            x[i].disabled = false;
+            x[i].value = "";
+            x[i].classList.remove('is-invalid')
+
+        }
+
+    }
+
+
+    function ResetRespuestas() {
+
+        while (pila_div.size() != 0) {
+            aux = pila_div.Ver_ultimo();
+            
+            document.getElementById(`${aux}`).style.display = "none";
+            pila_div.pop()
+
+
+        }
+
+        while (pila_RadioButtons.size() != 0) {
+            aux = pila_RadioButtons.Ver_ultimo();
+            Activar_Opciones(aux);
+            pila_RadioButtons.pop()
+
+
+        }
+
+
+
+        Reset_OpcionesTextArea()
+        document.getElementById("Boton_Enviar").style.display = "none";
+        Preguntas_Triaje = [];
+
+
+        var targetElm = document.querySelector('#Titulo')  // reference to scroll target
+        targetElm.scrollIntoView();
+
+
+    }
+
+
+
+    var select_1 = document.getElementById('Select_1');
+    select_1.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'inlineRadioOptions') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Siente dolor?",
+                    Respuesta: target.value,
+                });
+
+
+                Desactivar_Opciones("RadioOptions_1");
+                pila_div.push("Select_1_SI");
+                pila_RadioButtons.push("RadioOptions_1");
+
+
+                document.getElementById("Select_1_NO_A").style.display = "none";
+                document.getElementById("Select_1_P1").style.display = "";
+                //document.getElementById("Select_1_SI").style.display = "";
+
+            } else {
+
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Siente dolor?",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("RadioOptions_1");
+                pila_div.push("Select_1_NO_A");
+                pila_RadioButtons.push("RadioOptions_1");
+
+                //document.getElementById("Select_1_SI").style.display = "none";
+                document.getElementById("Select_1_P1").style.display = "none";
+                document.getElementById("Select_1_NO_A").style.display = "";
+            }
+        }
+    });
+
+
+    /* ##########  NUEVAS PREGUNTAS ################ */
+
+    var select_1_P1 = document.getElementById('Select_1_P1');
+    select_1_P1.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Select_1_P1') {
+
+            
+
+            Preguntas_Triaje.push({
+                Pregunta: "¿Cuando empezo el dolor?",
+                Respuesta: target.value,
+            });
+
+
+            Desactivar_Opciones("Options_Select_1_P1");
+            pila_div.push("Select_1_P1");
+            pila_RadioButtons.push("Options_Select_1_P1");
+            document.getElementById("Select_1_P2").style.display = "";
+
+
+        }
+    });
+
+
+    var select_1_P2 = document.getElementById('Select_1_P2');
+    select_1_P2.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Select_1_P2') {
+
+            
+
+            Preguntas_Triaje.push({
+                Pregunta: "¿Cual ha sido la intencidad del dolor?",
+                Respuesta: target.value,
+            });
+
+
+            Desactivar_Opciones("Options_Select_1_P2");
+            pila_div.push("Select_1_P2");
+            pila_RadioButtons.push("Options_Select_1_P2");
+            document.getElementById("Select_1_SI").style.display = "";
+
+        }
+    });
+
+
+    /*########### fIN NUEVAS PREGUNTAS ################# */
+
+    /* divs se la rama select1_SI */
+
+    var Select_1_SI_Options = document.getElementById('Select_1_SI_Options');
+    Select_1_SI_Options.addEventListener('change', ({ target }) => {
+
+
+            if (target.getAttribute('name') === 'Options_Select1_SI') {
+
+
+                Preguntas_Triaje.push({
+                    Pregunta: "Localizacion: ¿El dolor esta asociacio a..?",
+                    Respuesta: target.value,
+                });
+
+
+                if (target.value == "Dientes") {
+
+                    Desactivar_Opciones("Options_Select1_SI");
+                    pila_RadioButtons.push("Options_Select1_SI");
+                    pila_div.push("Dientes_1");
+
+                    document.getElementById("Dientes_1").style.display = "";
+
+
+                } else if (target.value == "Encias") {
+
+
+                    Desactivar_Opciones("Options_Select1_SI");
+                    pila_RadioButtons.push("Options_Select1_SI");
+                    pila_div.push("Encias_1");
+
+                    document.getElementById("Encias_1").style.display = "";
+
+
+                } else if (target.value == "Traumatismo") {
+
+
+                    Desactivar_Opciones("Options_Select1_SI");
+                    pila_RadioButtons.push("Options_Select1_SI");
+                    pila_div.push("Traumatismo_1");
+
+                    document.getElementById("Traumatismo_1").style.display = "";
+
+
+                } else if (target.value == "Infeccion") {
+
+
+                    Desactivar_Opciones("Options_Select1_SI");
+                    pila_RadioButtons.push("Options_Select1_SI");
+                    pila_div.push("Infeccion_1");
+
+                    document.getElementById("Infeccion_1").style.display = "";
+
+
+                } else if (target.value == "Paladar") {
+
+
+                    Desactivar_Opciones("Options_Select1_SI");
+                    pila_RadioButtons.push("Options_Select1_SI");
+
+                    Data.PreguntasTriaje = Preguntas_Triaje;
+                    Data.ClinicaSugerida = "Estomatología";
+                    document.getElementById("Boton_Enviar").style.display = "";
+
+
+                } else if (target.value == "Imposibilidad") {
+
+
+                    Desactivar_Opciones("Options_Select1_SI");
+                    pila_RadioButtons.push("Options_Select1_SI");
+
+                    Data.PreguntasTriaje = Preguntas_Triaje;
+                    Data.ClinicaSugerida = "Integral del Adulto";
+                    document.getElementById("Boton_Enviar").style.display = "";
+
+
+                } else if (target.value == "Extraccion") {
+
+
+                    Desactivar_Opciones("Options_Select1_SI");
+                    pila_RadioButtons.push("Options_Select1_SI");
+
+                    Data.PreguntasTriaje = Preguntas_Triaje;
+                    Data.ClinicaSugerida = "Cirugia";
+                    document.getElementById("Boton_Enviar").style.display = "";
+
+
+                }
+            }
+
+
+        
+
+    });
+
+
+    /* RAMA OPCION DIENTES */
+
+    var Dientes_1 = document.getElementById('Dientes_1');
+    Dientes_1.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Dientes_1') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Esta en la ultima muela?",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("Options_Dientes_1");
+                pila_RadioButtons.push("Options_Dientes_1");
+                pila_div.push("Dientes_2");                         // El siguiente Divs
+                document.getElementById("Dientes_2").style.display = "";
+
+
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Esta en la ultima muela?",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("Options_Dientes_1");
+                pila_RadioButtons.push("Options_Dientes_1");
+                pila_div.push("Dientes_3");                         // El siguiente Divs
+                document.getElementById("Dientes_3").style.display = "";
+
+            }
+        }
+    });
+
+
+
+    var Dientes_2 = document.getElementById('Dientes_2');
+    Dientes_2.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Dientes_2') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Está cubierta por encía?",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("Options_Dientes_2");
+                pila_RadioButtons.push("Options_Dientes_2");
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Cirugia";
+                document.getElementById("Boton_Enviar").style.display = "";
+
+
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Está cubierta por encía??",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("Options_Dientes_2");
+                pila_RadioButtons.push("Options_Dientes_2");
+                pila_div.push("Dientes_3");                         // El siguiente Divs
+                document.getElementById("Dientes_3").style.display = "";
+
+            }
+        }
+    });
+
+
+
+    var Dientes_3 = document.getElementById('Dientes_3');
+    Dientes_3.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Dientes_3') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿El dolor es intenso y/o constante?",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("Options_Dientes_3");
+                pila_RadioButtons.push("Options_Dientes_3");
+                pila_div.push("Dientes_4");                         // El siguiente Divs
+                document.getElementById("Dientes_4").style.display = "";
+
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿El dolor es intenso y/o constante?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Operatoria Dental";
+
+                Desactivar_Opciones("Options_Dientes_3");
+                pila_RadioButtons.push("Options_Dientes_3");
+                document.getElementById("Boton_Enviar").style.display = "";
+
+            }
+        }
+    });
+
+
+
+
+    var Dientes_4 = document.getElementById('Dientes_4');
+    Dientes_4.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Dientes_4') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Se agudiza con frio, calor o dulce?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Endodoncia";
+
+                Desactivar_Opciones("Options_Dientes_4");
+                pila_RadioButtons.push("Options_Dientes_4");
+                document.getElementById("Boton_Enviar").style.display = "";
+
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Se agudiza con frio, calor o dulce?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Operatoria Dental";
+
+                Desactivar_Opciones("Options_Dientes_4");
+                pila_RadioButtons.push("Options_Dientes_4");
+                document.getElementById("Boton_Enviar").style.display = "";
+            }
+        }
+    });
+
+
+
+    /* RAMA OPCION ENCIAS */
+
+    var Encias_1 = document.getElementById('Encias_1');
+    Encias_1.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Encias_1') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Hay una capa blanca sobre la lesion?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Periodoncia";
+
+                Desactivar_Opciones("Options_Encias_1");
+                pila_RadioButtons.push("Options_Encias_1");
+                document.getElementById("Boton_Enviar").style.display = "";
+
+
+
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Hay una capa blanca sobre la lesion?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Periodoncia";
+
+                Desactivar_Opciones("Options_Encias_1");
+                pila_RadioButtons.push("Options_Encias_1");
+                document.getElementById("Boton_Enviar").style.display = "";
+
+            }
+        }
+    });
+
+
+
+    /* RAMA OPCION TRAUMATISMO */
+
+    var Traumatismo_1 = document.getElementById('Traumatismo_1');
+    Traumatismo_1.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Traumatismo_1') {
+
+            if (target.value == "Oseo") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "Tipo de Trauma",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Cirugia";
+
+
+                Desactivar_Opciones("Options_Traumatismo_1");
+                pila_RadioButtons.push("Options_Traumatismo_1");
+                document.getElementById("Boton_Enviar").style.display = "";
+
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Hay una capa blanca sobre la lesion?",
+                    Respuesta: target.value,
+                });
+
+
+                Desactivar_Opciones("Options_Traumatismo_1");
+                pila_RadioButtons.push("Options_Traumatismo_1");
+
+                pila_div.push("Traumatismo_2");                         // El siguiente Divs
+                document.getElementById("Traumatismo_2").style.display = "";
+
+            }
+        }
+    });
+
+
+
+    var Traumatismo_2 = document.getElementById('Traumatismo_2');
+    Traumatismo_2.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Traumatismo_2') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Hubo sangrado?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Endodoncia";
+
+
+                Desactivar_Opciones("Options_Traumatismo_2");
+                pila_RadioButtons.push("Options_Traumatismo_2");
+                document.getElementById("Boton_Enviar").style.display = "";
+
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Hubo sangrado?",
+                    Respuesta: target.value,
+                });
+
+
+                Desactivar_Opciones("Options_Traumatismo_2");
+                pila_RadioButtons.push("Options_Traumatismo_2");
+
+                pila_div.push("Traumatismo_3");                         // El siguiente Divs
+                document.getElementById("Traumatismo_3").style.display = "";
+
+            }
+        }
+    });
+
+
+
+
+    var Traumatismo_3 = document.getElementById('Traumatismo_3');
+    Traumatismo_3.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Traumatismo_3') {
+
+            if (target.value == "Con_ExposicionPulpar") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Perdida de extructura dental?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Endodoncia";
+
+
+                Desactivar_Opciones("Options_Traumatismo_3");
+                pila_RadioButtons.push("Options_Traumatismo_3");
+                document.getElementById("Boton_Enviar").style.display = "";
+
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Perdida de extructura dental?",
+                    Respuesta: target.value,
+                });
+
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Operatoria Dental";
+
+
+                Desactivar_Opciones("Options_Traumatismo_3");
+                pila_RadioButtons.push("Options_Traumatismo_3");
+                document.getElementById("Boton_Enviar").style.display = "";
+
+            }
+        }
+    });
+
+
+
+    /* RAMA OPCION Infeccion */
+
+    var Infeccion_1 = document.getElementById('Infeccion_1');
+    Infeccion_1.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Infeccion_1') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Dificultad para abrir la boca o tragar?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Cirugia";
+
+                Desactivar_Opciones("Options_Infeccion_1");
+                pila_RadioButtons.push("Options_Infeccion_1");
+                document.getElementById("Boton_Enviar").style.display = "";
+
+
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Dificultad para abrir la boca o tragar?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Estomatología";
+
+                Desactivar_Opciones("Options_Infeccion_1");
+                pila_RadioButtons.push("Options_Infeccion_1");
+                document.getElementById("Boton_Enviar").style.display = "";
+
+            }
+        }
+    });
+
+
+
+
+
+
+
+    /* divs se la rama select1_NO */
+
+    var select1_NO_A = document.getElementById('Select_1_NO_A');
+    select1_NO_A.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Select1_NO_A') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Presenta alguna lesión en tejido blando?",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("Options_Select1_NO_A");
+                pila_RadioButtons.push("Options_Select1_NO_A");
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Estomatología";
+                document.getElementById("Boton_Enviar").style.display = "";
+
+            } else {
+
+                Desactivar_Opciones("Options_Select1_NO_A");
+                pila_div.push("Select_1_NO_B");
+                pila_RadioButtons.push("Options_Select1_NO_A");
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Presenta alguna lesión en tejido blando?",
+                    Respuesta: target.value,
+                });
+
+
+                document.getElementById("Select_1_NO_B").style.display = "";
+
+
+
+            }
+        }
+    });
+
+
+
+    var select1_NO_B = document.getElementById('Select_1_NO_B');
+    select1_NO_B.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Select1_NO_B') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿El motivo de la consulta está asociado al uso de prótesis dental removible?",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("Options_Select1_NO_B");
+                pila_RadioButtons.push("Options_Select1_NO_B");
+
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Integral del Adulto";
+
+
+                document.getElementById("Boton_Enviar").style.display = "";
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿El motivo de la consulta está asociado al uso de prótesis dental removible?",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("Options_Select1_NO_B");
+                pila_RadioButtons.push("Options_Select1_NO_B");
+                pila_div.push("Select_1_NO_C");                         // El siguiente Divs
+                document.getElementById("Select_1_NO_C").style.display = "";
+
+            }
+        }
+    });
+
+
+
+    var select1_NO_C = document.getElementById('Select_1_NO_C');
+    select1_NO_C.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Select1_NO_C') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Requiere una prótesis dental?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Integral del Adulto";
+
+
+                Desactivar_Opciones("Options_Select1_NO_C");
+                pila_RadioButtons.push("Options_Select1_NO_C");
+
+                document.getElementById("Boton_Enviar").style.display = "";
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Requiere una prótesis dental?",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("Options_Select1_NO_C");
+                pila_RadioButtons.push("Options_Select1_NO_C");
+                pila_div.push("Select_1_NO_D");                         // El siguiente Divs
+                document.getElementById("Select_1_NO_D").style.display = "";
+
+            }
+        }
+    });
+
+
+
+    var select1_NO_D = document.getElementById('Select_1_NO_D');
+    select1_NO_D.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Select1_NO_D') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Necesita una extracción dental?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Cirugia";
+
+
+                Desactivar_Opciones("Options_Select1_NO_D");
+                pila_RadioButtons.push("Options_Select1_NO_D");
+
+                document.getElementById("Boton_Enviar").style.display = "";
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Necesita una extracción dental?",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("Options_Select1_NO_D");
+                pila_RadioButtons.push("Options_Select1_NO_D");
+                pila_div.push("Select_1_NO_E");                         // El siguiente Divs
+                document.getElementById("Select_1_NO_E").style.display = "";
+
+            }
+        }
+    });
+
+
+
+
+    var select1_NO_E = document.getElementById('Select_1_NO_E');
+    select1_NO_E.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Select1_NO_E') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Necesita realizar un proceso quirurgico?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Cirugia";
+
+
+                Desactivar_Opciones("Options_Select1_NO_E");
+                pila_RadioButtons.push("Options_Select1_NO_E");
+
+                document.getElementById("Boton_Enviar").style.display = "";
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Necesita realizar un proceso quirurgico?",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("Options_Select1_NO_E");
+                pila_RadioButtons.push("Options_Select1_NO_E");
+                pila_div.push("Select_1_NO_F");                         // El siguiente Divs
+                document.getElementById("Select_1_NO_F").style.display = "";
+
+            }
+        }
+    });
+
+
+
+    var select1_NO_F = document.getElementById('Select_1_NO_F');
+    select1_NO_F.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Select1_NO_F') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿El motivo de la consulta está asociado a caries dental?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Operativa Dental";
+
+
+                Desactivar_Opciones("Options_Select1_NO_F");
+                pila_RadioButtons.push("Options_Select1_NO_F");
+
+                document.getElementById("Boton_Enviar").style.display = "";
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿El motivo de la consulta está asociado a caries dental?",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("Options_Select1_NO_F");
+                pila_RadioButtons.push("Options_Select1_NO_F");
+                pila_div.push("Select_1_NO_G");                         // El siguiente Divs
+                document.getElementById("Select_1_NO_G").style.display = "";
+
+            }
+        }
+    });
+
+
+    var select1_NO_G = document.getElementById('Select_1_NO_G');
+    select1_NO_G.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Select1_NO_G') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Necesita cambiar o reponer una restauración o calza?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Operativa Dental";
+
+
+                Desactivar_Opciones("Options_Select1_NO_G");
+                pila_RadioButtons.push("Options_Select1_NO_G");
+
+                document.getElementById("Boton_Enviar").style.display = "";
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Necesita cambiar o reponer una restauración o calza?",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("Options_Select1_NO_G");
+                pila_RadioButtons.push("Options_Select1_NO_G");
+                pila_div.push("Select_1_NO_H");                         // El siguiente Divs
+                document.getElementById("Select_1_NO_H").style.display = "";
+
+            }
+        }
+    });
+
+
+    var select1_NO_H = document.getElementById('Select_1_NO_H');
+    select1_NO_H.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Select1_NO_H') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Presenta sangrado al cepillarse?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Periodoncia";
+
+
+                Desactivar_Opciones("Options_Select1_NO_H");
+                pila_RadioButtons.push("Options_Select1_NO_H");
+
+                document.getElementById("Boton_Enviar").style.display = "";
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Presenta sangrado al cepillarse?",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("Options_Select1_NO_H");
+                pila_RadioButtons.push("Options_Select1_NO_H");
+                pila_div.push("Select_1_NO_I");                         // El siguiente Divs
+                document.getElementById("Select_1_NO_I").style.display = "";
+
+            }
+        }
+    });
+
+
+
+    var select1_NO_I = document.getElementById('Select_1_NO_I');
+    select1_NO_I.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Select1_NO_I') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Requiere una limpieza dental?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Periodoncia";
+
+
+                Desactivar_Opciones("Options_Select1_NO_I");
+                pila_RadioButtons.push("Options_Select1_NO_I");
+
+                document.getElementById("Boton_Enviar").style.display = "";
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Requiere una limpieza dental?",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("Options_Select1_NO_I");
+                pila_RadioButtons.push("Options_Select1_NO_I");
+                pila_div.push("Select_1_NO_J");                         // El siguiente Divs
+                document.getElementById("Select_1_NO_J").style.display = "";
+
+            }
+        }
+    });
+
+
+
+    var select1_NO_J = document.getElementById('Select_1_NO_J');
+    select1_NO_J.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Select1_NO_J') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Necesita realizar un procedimiento estético?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Operativa Dental";
+
+
+                Desactivar_Opciones("Options_Select1_NO_J");
+                pila_RadioButtons.push("Options_Select1_NO_J");
+
+                document.getElementById("Boton_Enviar").style.display = "";
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Necesita realizar un procedimiento estético?",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("Options_Select1_NO_J");
+                pila_RadioButtons.push("Options_Select1_NO_J");
+                pila_div.push("Select_1_NO_K");                         // El siguiente Divs
+                document.getElementById("Select_1_NO_K").style.display = "";
+
+            }
+        }
+    });
+
+
+
+    var select1_NO_K = document.getElementById('Select_1_NO_K');
+    select1_NO_K.addEventListener('change', ({ target }) => {
+
+        if (target.getAttribute('name') === 'Options_Select1_NO_K') {
+
+            if (target.value == "si") {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Necesita realizar una revisión y consulta para referir?",
+                    Respuesta: target.value,
+                });
+
+                Data.PreguntasTriaje = Preguntas_Triaje;
+                Data.ClinicaSugerida = "Estomatología";
+
+
+                Desactivar_Opciones("Options_Select1_NO_K");
+                pila_RadioButtons.push("Options_Select1_NO_K");
+
+                document.getElementById("Boton_Enviar").style.display = "";
+
+            } else {
+
+                Preguntas_Triaje.push({
+                    Pregunta: "¿Necesita realizar una revisión y consulta para referir?",
+                    Respuesta: target.value,
+                });
+
+                Desactivar_Opciones("Options_Select1_NO_K");
+                pila_RadioButtons.push("Options_Select1_NO_K");
+                ResetRespuestas();
+
+            }
+        }
+    });
+
+
+
+</script>
+
+
+</html>
