@@ -5,22 +5,37 @@
 To get this project up and running locally on your computer follow the following steps.
 
 1. Clone this repository to your local machine.
+```
+$ git clone https://github.com/MarAlba8/triaje-ula.git
+```
 2. Create a python virtual environment and activate it.
-3. Open up your terminal and run the following command to install the packages used in this project.
+
+```
+$ python3 -m venv venv
+$ source venv/bin/activate
+```
+4. Open up your terminal and run the following command to install the packages used in this project.
 
 ```
 $ pip install -r requirements.txt
 ```
-4. Rename the `.env.example` file found in the root directory of the project to `.env` and update
-   the environment variables accordingly.
-5. Run the following commands to setup the database tables and create a super user.
+4. Create an `.env` file inside `config` folder and update with the environment variables accordingly.
+5. Go to the `src` folder and run the following commands to setup the database tables.
 
 ```
+$ python manage.py makemigrations
 $ python manage.py migrate
+```
+6. Create a superuser
+```
 $ python manage.py createsuperuser
 ```
 
-6. Run the development server using:
+7. Load the data for the clinics 
+```
+$ python manage.py loaddata addClinics.json
+```
+8. Run the development server using:
 
 ```
 $ python manage.py runserver
